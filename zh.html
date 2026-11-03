@@ -14,9 +14,15 @@
 <a class="skip" href="#main">跳到正文</a>
 
 <header class="wrap nav">
-  <a class="brand" href="#top" aria-label="首页">cygnusyang</a>
+  <a class="brand" href="#top" aria-label="首页"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.6 L12 6 M12 11.6 L7 19 M12 11.6 L17 19" stroke="currentColor" stroke-opacity=".4" stroke-width="1.5" fill="none"/><circle cx="12" cy="11.6" r="2.7" fill="var(--star)"/><circle cx="12" cy="6" r="2.1" fill="currentColor"/><circle cx="7" cy="19" r="2.1" fill="currentColor"/><circle cx="17" cy="19" r="2.1" fill="currentColor"/></svg><span>工具</span></a>
   <nav class="navlinks" aria-label="主导航">
-    <a href="#products">产品</a>
+    <div class="dropdown">
+      <button type="button" class="dropbtn" aria-haspopup="true">产品 <span class="caret">▾</span></button>
+      <div class="dropdown-menu">
+        <a href="https://kaido.cygnusyang.top/"><span class="d-title">Kaido Plan</span><span class="d-sub">项目规划</span></a>
+        <a href="https://bitcoffer.cygnusyang.top/"><span class="d-title">Bitcoffer</span><span class="d-sub">密钥与凭据</span></a>
+      </div>
+    </div>
     <a class="optional" href="#principles">理念</a>
     <a class="optional" href="https://cygnusyang.github.io/">博客</a>
     <a href="about.html">关于</a>
@@ -89,7 +95,7 @@
     <div class="wrap">
       <div>
         <h2>一个人，认真做的软件。</h2>
-        <p>这些软件由 <strong>cygnusyang</strong> 独立开发——设计、实现、文档全部公开。两件工具的源码都可查阅，你能确切知道跑在你机器上的是什么。</p>
+        <p>独立开发的软件，设计、实现、文档全部公开。两件工具的源码都可查阅，你能确切知道跑在你机器上的是什么。</p>
       </div>
       <a class="button ghost" href="about.html" style="background:var(--ink);color:var(--paper)">更多关于开发者</a>
     </div>
@@ -98,7 +104,7 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <span>© 2026 cygnusyang · 独立开发的 macOS 软件</span>
+    <span>© 2026 · 独立开发的 macOS 软件</span>
     <span class="cols">
       <a href="https://kaido.cygnusyang.top/">Kaido</a>
       <a href="https://bitcoffer.cygnusyang.top/">Bitcoffer</a>

@@ -14,9 +14,15 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="wrap nav">
-  <a class="brand" href="#top" aria-label="Home">cygnusyang</a>
+  <a class="brand" href="#top" aria-label="Home"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.6 L12 6 M12 11.6 L7 19 M12 11.6 L17 19" stroke="currentColor" stroke-opacity=".4" stroke-width="1.5" fill="none"/><circle cx="12" cy="11.6" r="2.7" fill="var(--star)"/><circle cx="12" cy="6" r="2.1" fill="currentColor"/><circle cx="7" cy="19" r="2.1" fill="currentColor"/><circle cx="17" cy="19" r="2.1" fill="currentColor"/></svg><span>Tools</span></a>
   <nav class="navlinks" aria-label="Main">
-    <a href="#products">Products</a>
+    <div class="dropdown">
+      <button type="button" class="dropbtn" aria-haspopup="true">Products <span class="caret">▾</span></button>
+      <div class="dropdown-menu">
+        <a href="https://kaido.cygnusyang.top/"><span class="d-title">Kaido Plan</span><span class="d-sub">Project planning</span></a>
+        <a href="https://bitcoffer.cygnusyang.top/"><span class="d-title">Bitcoffer</span><span class="d-sub">Secrets &amp; credentials</span></a>
+      </div>
+    </div>
     <a class="optional" href="#principles">Principles</a>
     <a class="optional" href="https://cygnusyang.github.io/">Blog</a>
     <a href="about.html">About</a>
@@ -89,7 +95,7 @@
     <div class="wrap">
       <div>
         <h2>One person, careful software.</h2>
-        <p>Independent software by <strong>cygnusyang</strong> — designed, built and documented out in the open. Source is available for both tools, so you can read exactly what runs on your machine.</p>
+        <p>Independent software, designed, built and documented out in the open. Source is available for both tools, so you can read exactly what runs on your machine.</p>
       </div>
       <a class="button ghost" href="about.html" style="background:var(--ink);color:var(--paper)">More about the developer</a>
     </div>
@@ -98,7 +104,7 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <span>© 2026 cygnusyang · Independent software for the Mac</span>
+    <span>© 2026 · Independent software for the Mac</span>
     <span class="cols">
       <a href="https://kaido.cygnusyang.top/">Kaido</a>
       <a href="https://bitcoffer.cygnusyang.top/">Bitcoffer</a>
