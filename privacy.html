@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Privacy — Kaido Plan and Bitcoffer collect nothing. Both are local-first by design.">
+<title>Privacy — Kaido Plan &amp; Bitcoffer</title>
+<link rel="canonical" href="https://ai.cygnusyang.top/privacy.html">
+<link rel="stylesheet" href="cygnus.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap nav">
+  <a class="brand" href="./" aria-label="Home">cygnusyang</a>
+  <nav class="navlinks" aria-label="Main">
+    <a href="./#products">Products</a>
+    <a href="about.html">About</a>
+    <a class="lang" href="#zh" lang="zh-Hans">中文</a>
+  </nav>
+</header>
+
+<main id="main" class="prose">
+  <h1>Privacy</h1>
+  <p class="meta">Last updated: 3 November 2026</p>
+
+  <p>These tools are local-first by design. <strong>We do not collect, store, or transmit your personal information.</strong> There is no account system, no analytics, no crash reporting, no advertising, and no third-party SDK in either product.</p>
+
+  <h2>Kaido Plan</h2>
+  <ul>
+    <li>Your <code>.kaido</code> files live only where you put them. The app never uploads, backs up, or syncs project content.</li>
+    <li>To reopen a recent project, the app stores a security-scoped bookmark in your local preferences after you explicitly choose a file or folder.</li>
+    <li>The MCP server (off by default) listens on <code>127.0.0.1</code> only, requires a locally generated bearer token, and can only reach folders you authorize.</li>
+  </ul>
+
+  <h2>Bitcoffer</h2>
+  <ul>
+    <li>Passwords, keys, and credentials are stored in an encrypted vault on your device only. No cloud sync.</li>
+    <li>The single network exception is the update check (OTA), which fetches a signed manifest from GitHub Releases. The Rust core ships no networking crates; this claim is asserted by tests.</li>
+    <li>The MCP server hands secrets to a child process's environment without returning the values to the model.</li>
+  </ul>
+
+  <h2>Purchases</h2>
+  <p>For direct-download purchases, payment is handled by <strong>Paddle.com Market Ltd</strong> as Merchant of Record. Paddle processes your payment details; we never see your card number. Purchases on the Mac App Store are handled by Apple.</p>
+
+  <h2>Questions</h2>
+  <p>Email <a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a>, or open an issue on the relevant GitHub repository.</p>
+
+  <hr id="zh">
+  <h1>隐私</h1>
+  <p class="meta">最后更新：2026-11-03</p>
+  <p>这些工具从设计上就是本地优先。<strong>我们不收集、不存储、不传输任何个人信息。</strong>两个产品都没有账号系统、行为分析、崩溃上报、广告或第三方 SDK。</p>
+  <ul>
+    <li><strong>Kaido Plan</strong>：<code>.kaido</code> 文件只存在你选择的位置，不上传、不同步；MCP 服务默认关闭，只监听 <code>127.0.0.1</code> 并需本机令牌。</li>
+    <li><strong>Bitcoffer</strong>：凭据加密存储在本机，无云同步；唯一的网络例外是 OTA 更新检查（从 GitHub Releases 拉取签名清单）。</li>
+    <li><strong>购买</strong>：直装版由 Paddle.com Market Ltd 作为记录商户处理支付，我们看不到你的卡号；App Store 版由 Apple 处理。</li>
+  </ul>
+  <p>疑问请发邮件至 <a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a> 或到对应仓库提 Issue。</p>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 cygnusyang · Independent software for the Mac</span>
+    <span class="cols">
+      <a href="./">Home</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refunds</a>
+      <a href="about.html">About</a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>

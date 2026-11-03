@@ -1,0 +1,153 @@
+/* ============================================================
+   Shared stylesheet — local-first, AI-ready tools for the Mac
+   ------------------------------------------------------------
+   Reused across: cygnusyang.top, kaido.cygnusyang.top and
+   bitcoffer.cygnusyang.top. Product accent colors live here so
+   the sites read as one family.
+   ============================================================ */
+
+:root{
+  color-scheme: light;
+  --ink:#1c1c1e;
+  --muted:#686a73;
+  --faint:#9a9ca6;
+  --line:#e5e6eb;
+  --line-strong:#d6d8df;
+  --paper:#ffffff;
+  --soft:#f5f6fa;
+  --night:#0e1420;        /* deep ink-blue */
+  --night-2:#16223a;      /* hero gradient end */
+  --star:#e8b84b;         /* gold accent */
+  --star-dim:#c79a2f;
+  --accent-kaido:#5f6cf8; /* product accent — Kaido */
+  --accent-bitcoffer:#0f7b6c; /* product accent — Bitcoffer */
+  --max:1160px;
+  --radius:14px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Helvetica Neue",sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme: dark;
+    --ink:#ececee;
+    --muted:#a6a8b2;
+    --faint:#7b7d87;
+    --line:#2a2d36;
+    --line-strong:#3a3e48;
+    --paper:#14161c;
+    --soft:#1c1f27;
+    --night:#0b0f18;
+    --night-2:#101828;
+  }
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;line-height:1.6}
+a{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.02em;font-weight:650}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:24px;padding-right:24px}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:12px;top:12px;background:var(--ink);color:var(--paper);padding:8px 14px;border-radius:8px;z-index:100}
+
+/* ---------- top navigation (shared across the three sites) ---------- */
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:18px;letter-spacing:-.01em;text-decoration:none}
+.nav .brand .mark{width:22px;height:22px;flex:0 0 auto}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:14px}
+.navlinks a{text-decoration:none;color:var(--muted)}
+.navlinks a:hover{color:var(--ink)}
+.navlinks a.active{color:var(--ink);font-weight:600}
+.nav .lang{color:var(--muted);text-decoration:none;font-size:14px}
+.nav .lang:hover{color:var(--ink)}
+@media (max-width:720px){
+  .navlinks .optional{display:none}
+  .navlinks{gap:14px}
+}
+
+/* ---------- hero (studio, dark) ---------- */
+.hero{background:linear-gradient(160deg,var(--night) 0%,var(--night-2) 100%);color:#fff;overflow:hidden;position:relative}
+.hero .wrap{position:relative;padding-top:88px;padding-bottom:96px}
+.hero .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--star);margin-bottom:20px}
+.hero h1{font-size:52px;line-height:1.05;letter-spacing:-.03em;max-width:16ch}
+.hero h1 .accent{color:var(--star)}
+.hero .lede{margin-top:22px;font-size:19px;line-height:1.55;color:rgba(255,255,255,.72);max-width:56ch}
+.hero .actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.button{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:11px;font-weight:650;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.button.primary{background:var(--star);color:#1a1508}
+.button.primary:hover{background:#f2c96a}
+.button.ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.18)}
+.button.ghost:hover{background:rgba(255,255,255,.12)}
+.hero .stars{position:absolute;inset:0;pointer-events:none}
+.hero .stars .dot{position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.5)}
+@media (max-width:720px){
+  .hero h1{font-size:36px}
+  .hero .wrap{padding-top:56px;padding-bottom:64px}
+}
+
+/* ---------- section scaffolding ---------- */
+.section{padding:88px 0}
+.section.tight{padding:64px 0}
+.section-head{margin-bottom:44px}
+.section-head .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.section-head h2{font-size:34px;letter-spacing:-.025em}
+.section-head p{color:var(--muted);margin-top:14px;max-width:62ch}
+
+/* ---------- product cards ---------- */
+.products{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.product{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:34px;background:var(--paper);text-decoration:none;color:inherit;transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease;overflow:hidden}
+.product:hover{transform:translateY(-3px);border-color:var(--line-strong);box-shadow:0 18px 44px rgba(0,0,0,.09)}
+.product .bar{position:absolute;top:0;left:0;right:0;height:4px}
+.product.kaido .bar{background:var(--accent-kaido)}
+.product.bitcoffer .bar{background:var(--accent-bitcoffer)}
+.product .tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:650;margin-bottom:16px}
+.product.kaido .tag{color:var(--accent-kaido)}
+.product.bitcoffer .tag{color:var(--accent-bitcoffer)}
+.product h3{font-size:26px;margin-bottom:12px}
+.product p{color:var(--muted);margin-bottom:22px}
+.product .go{font-weight:650;font-size:15px;display:inline-flex;align-items:center;gap:6px}
+.product.kaido .go{color:var(--accent-kaido)}
+.product.bitcoffer .go{color:var(--accent-bitcoffer)}
+.product .go .arr{transition:transform .12s ease}
+.product:hover .go .arr{transform:translateX(3px)}
+@media (max-width:760px){.products{grid-template-columns:1fr}}
+
+/* ---------- principles ---------- */
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.principle h3{font-size:18px;margin-bottom:10px}
+.principle p{color:var(--muted);font-size:15px}
+@media (max-width:760px){.principles{grid-template-columns:1fr}}
+
+/* ---------- about strip ---------- */
+.about-strip{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-top:56px;padding-bottom:56px}
+.about-strip h2{font-size:26px}
+.about-strip p{color:var(--muted);margin-top:10px;max-width:64ch}
+@media (max-width:720px){.about-strip .wrap{flex-direction:column;align-items:flex-start}}
+
+/* ---------- footer (shared) ---------- */
+.footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--muted);font-size:13px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer a{text-decoration:none;color:var(--muted)}
+.footer a:hover{color:var(--ink)}
+.footer .cols{display:flex;gap:20px;flex-wrap:wrap}
+
+/* ---------- legal / prose pages ---------- */
+.prose{max-width:720px;margin:0 auto;padding:64px 24px 96px}
+.prose h1{font-size:30px;margin-bottom:6px}
+.prose h2{font-size:20px;margin-top:40px}
+.prose .meta{color:var(--faint);font-size:14px;margin-bottom:28px}
+.prose p,.prose li{color:var(--ink);font-size:16px}
+.prose ul,.prose ol{padding-left:22px}
+.prose a{color:var(--accent-kaido)}
+.prose .box{border-left:3px solid var(--star);padding:12px 16px;margin:24px 0;background:var(--soft);border-radius:0 8px 8px 0}
+.prose table{border-collapse:collapse;width:100%;margin:18px 0}
+.prose th,.prose td{border:1px solid var(--line);padding:9px 12px;text-align:left;font-size:15px}
+.prose hr{border:0;border-top:1px solid var(--line);margin:44px 0}
