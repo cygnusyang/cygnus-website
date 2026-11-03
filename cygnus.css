@@ -117,7 +117,17 @@ p{margin:0}
 .product.bitcoffer .go{color:var(--accent-bitcoffer)}
 .product .go .arr{transition:transform .12s ease}
 .product:hover .go .arr{transform:translateX(3px)}
+.product .price{font-size:34px;font-weight:700;letter-spacing:-.02em;margin-bottom:16px}
+.product .price .per{font-size:15px;font-weight:600;color:var(--muted)}
+.product ul.feats{list-style:none;padding:0;margin:0 0 22px;color:var(--muted)}
+.product ul.feats li{position:relative;padding-left:22px;margin-bottom:8px;font-size:15px}
+.product ul.feats li::before{content:"✓";position:absolute;left:0;color:var(--star);font-weight:700}
 @media (max-width:760px){.products{grid-template-columns:1fr}}
+
+/* ---------- pricing note ---------- */
+.pricing-note{margin-top:48px;max-width:720px}
+.pricing-note h2{font-size:20px;margin-bottom:14px}
+.pricing-note .note{color:var(--muted);font-size:14px;margin-top:14px}
 
 /* ---------- principles ---------- */
 .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
