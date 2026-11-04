@@ -4,3 +4,20 @@
 .license .price{font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.02em;color:var(--ink,#1a1a1f);margin:0 0 12px}
 .license .price span{font-size:15px;font-weight:400;color:var(--muted);letter-spacing:0}
 .license .button{margin-bottom:10px}
+
+/* 已购买者自助重发授权（2026-11-05）。默认收起，避免干扰首购用户；
+   展开后是一个单行表单，注意 650px 以下按钮要能换行。 */
+.resend{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.resend summary{cursor:pointer;font-size:13px;color:var(--muted);list-style:none;display:flex;align-items:center;gap:6px}
+.resend summary::-webkit-details-marker{display:none}
+.resend summary:before{content:"↺";color:var(--accent-dark);font-size:14px}
+.resend summary:hover{color:var(--ink)}
+.resend form{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.resend label{position:absolute;left:-9999px}
+.resend input{flex:1 1 11rem;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:9px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
+.resend input:focus{outline:2px solid var(--purple);outline-offset:1px;border-color:var(--purple)}
+.resend .button{font-size:14px;padding:10px 16px;box-shadow:none;margin-bottom:0}
+.resend .button[disabled]{opacity:.55;cursor:default}
+.resend-status{font-size:13px;line-height:1.5;color:var(--muted);margin:10px 0 0}
+.resend-status.is-ok{color:#1a7f45}
+.resend-status.is-error{color:#b3261e}
