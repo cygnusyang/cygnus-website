@@ -24,6 +24,9 @@
       return;
     }
     Paddle.Initialize({ token: "live_4a29a303f49f7dc47c33854986c" });
+    // Paddle 生成的结账链接会带 ?_ptxn=txn_...，直接打开该笔交易
+    var m = location.search.match(/[?&]_ptxn=(txn_[A-Za-z0-9]+)/);
+    if (m) { Paddle.Checkout.open({ transactionId: m[1] }); return; }
     var btn = document.getElementById("buy-kaido-pro");
     if (!btn) { return; }
     btn.addEventListener("click", function (e) {
