@@ -6,8 +6,9 @@
    so the sites read as one family.
    ============================================================ */
 
-/* Dark is the default. Light is opt-in via <html data-theme="light">,
-   toggled by the button in the nav (persisted in localStorage). */
+/* Theme follows the local clock (light 07:00-18:59, dark otherwise).
+   The nav toggle pins a manual choice in localStorage; ?theme=auto resets.
+   See theme.js — the switch happens before first paint, so no flash. */
 :root{
   color-scheme: dark;
   --ink:#ececee;
@@ -42,8 +43,9 @@
   --line-strong:#d6d8df;
   --paper:#ffffff;
   --soft:#f5f6fa;
-  --night:#0e1420;
-  --night-2:#16223a;
+  --night:#f7f8fb;        /* hero gradient start, light mode */
+  --night-2:#eaedf5;      /* hero gradient end, light mode */
+  --star-dim:#8a6a12;     /* gold that still holds contrast on white */
 }
 
 *{box-sizing:border-box}
@@ -87,6 +89,14 @@ p{margin:0}
 .button.ghost:hover{background:rgba(255,255,255,.12)}
 .hero .stars{position:absolute;inset:0;pointer-events:none}
 .hero .stars .dot{position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.5)}
+
+/* Light mode: same layout, no night sky. */
+:root[data-theme="light"] .hero{color:var(--ink);border-bottom:1px solid var(--line)}
+:root[data-theme="light"] .hero .eyebrow{color:var(--star-dim)}
+:root[data-theme="light"] .hero .lede{color:var(--muted)}
+:root[data-theme="light"] .hero .stars{display:none}
+:root[data-theme="light"] .button.ghost{background:#fff;color:var(--ink);border-color:var(--line-strong)}
+:root[data-theme="light"] .button.ghost:hover{background:var(--soft)}
 @media (max-width:720px){
   .hero h1{font-size:36px}
   .hero .wrap{padding-top:56px;padding-bottom:64px}
