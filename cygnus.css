@@ -6,17 +6,19 @@
    so the sites read as one family.
    ============================================================ */
 
+/* Dark is the default. Light is opt-in via <html data-theme="light">,
+   toggled by the button in the nav (persisted in localStorage). */
 :root{
-  color-scheme: light;
-  --ink:#1c1c1e;
-  --muted:#686a73;
-  --faint:#9a9ca6;
-  --line:#e5e6eb;
-  --line-strong:#d6d8df;
-  --paper:#ffffff;
-  --soft:#f5f6fa;
-  --night:#0e1420;        /* deep ink-blue */
-  --night-2:#16223a;      /* hero gradient end */
+  color-scheme: dark;
+  --ink:#ececee;
+  --muted:#a6a8b2;
+  --faint:#7b7d87;
+  --line:#2a2d36;
+  --line-strong:#3a3e48;
+  --paper:#14161c;
+  --soft:#1c1f27;
+  --night:#0b0f18;        /* deep ink-blue */
+  --night-2:#101828;      /* hero gradient end */
   --star:#e8b84b;         /* gold accent */
   --star-dim:#c79a2f;
   --accent-kaido:#5f6cf8; /* product accent — Kaido */
@@ -31,19 +33,17 @@
   -webkit-font-smoothing:antialiased;
 }
 
-@media (prefers-color-scheme: dark){
-  :root{
-    color-scheme: dark;
-    --ink:#ececee;
-    --muted:#a6a8b2;
-    --faint:#7b7d87;
-    --line:#2a2d36;
-    --line-strong:#3a3e48;
-    --paper:#14161c;
-    --soft:#1c1f27;
-    --night:#0b0f18;
-    --night-2:#101828;
-  }
+:root[data-theme="light"]{
+  color-scheme: light;
+  --ink:#1c1c1e;
+  --muted:#686a73;
+  --faint:#9a9ca6;
+  --line:#e5e6eb;
+  --line-strong:#d6d8df;
+  --paper:#ffffff;
+  --soft:#f5f6fa;
+  --night:#0e1420;
+  --night-2:#16223a;
 }
 
 *{box-sizing:border-box}
@@ -178,3 +178,8 @@ p{margin:0}
 .dropdown-menu .d-sub{font-size:12px;color:var(--muted)}
 .dropdown:hover .dropdown-menu,.dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
 .dropdown:hover .caret,.dropdown:focus-within .caret{transform:rotate(180deg)}
+
+/* ---------- theme toggle (dark default / light opt-in) ---------- */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:14px;line-height:1;cursor:pointer;transition:color .12s ease,border-color .12s ease,background .12s ease}
+.theme-toggle:hover{color:var(--ink);border-color:var(--line-strong);background:var(--soft)}
+.theme-toggle:focus-visible{outline:2px solid var(--star);outline-offset:2px}

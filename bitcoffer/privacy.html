@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitcoffer — 隐私政策 / Privacy Policy</title>
+<link rel="canonical" href="https://ai.cygnusyang.top/bitcoffer/privacy.html">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0 auto; max-width: 720px; padding: 48px 24px 96px;
+         font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", sans-serif; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 20px; margin-top: 40px; }
+  .meta { color: #888; font-size: 14px; }
+  code { font-size: 14px; background: rgba(127,127,127,.15); padding: 1px 4px; border-radius: 3px; }
+  pre { background: rgba(127,127,127,.12); padding: 12px 14px; border-radius: 8px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  hr { border: 0; border-top: 1px solid rgba(127,127,127,.3); margin: 48px 0; }
+  a { color: #0b6154; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(127,127,127,.25); vertical-align: top; }
+</style>
+<script src="../theme.js"></script>
+</head>
+<body>
+<h1>Bitcoffer 隐私政策</h1>
+<p class="meta">最后更新：2026-10-25 · 完整条款与适用范围以仓库中的 <a href="https://github.com/cygnusyang/bitcoffer/blob/main/PRIVACY.md">PRIVACY.md</a> 为准</p>
+
+<p><strong>一句话</strong>：Bitcoffer 不收集任何数据。没有账号、没有遥测、没有云同步、没有第三方 SDK。你的密码库只存在于你的 Mac 上，用你的主密码加密。<strong>唯一</strong>的网络访问，是你在点「检查更新」时向 GitHub 的四个固定域名发一个 HTTP 请求。</p>
+
+<h2>1 · 我们不做什么</h2>
+<table>
+  <tr><th>不做</th><th>说明</th></tr>
+  <tr><td>没有账号</td><td>产品里没有注册、没有邮箱、没有用户 ID</td></tr>
+  <tr><td>没有遥测</td><td>没有分析 SDK、没有崩溃上报、没有使用计数、没有「匿名」打点</td></tr>
+  <tr><td>没有云同步</td><td>密码库是一个本地文件，Bitcoffer 从不上传它</td></tr>
+  <tr><td>没有广告与追踪</td><td>没有需要你关闭的开关，因为什么都没有收集</td></tr>
+  <tr><td>没有第三方网络 SDK</td><td>不链接广告、分析、字体或 CDN 框架</td></tr>
+</table>
+
+<h2>2 · 什么留在你的 Mac 上</h2>
+<table>
+  <tr><th>数据</th><th>位置</th><th>保护</th></tr>
+  <tr><td>密码库（条目、TOTP 密钥、通行密钥元数据）</td><td><code>~/Library/Containers/top.cygnusyang.coffer/Data/Documents/Bitcoffer/&lt;vault-uuid&gt;/</code></td><td>Argon2id 派生密钥 + AEAD；主密码从不存储</td></tr>
+  <tr><td>诊断日志</td><td><code>~/Library/Containers/top.cygnusyang.coffer/Data/Library/Logs/Bitcoffer-diag.log</code></td><td>本地纯文本，<strong>从不自动上传</strong></td></tr>
+  <tr><td>剪贴板</td><td>macOS 剪贴板，仅在你复制字段时写入</td><td>可选：按你设定的超时自动清空</td></tr>
+  <tr><td>偏好设置</td><td>应用容器内的 UserDefaults</td><td>语言、锁屏超时等</td></tr>
+</table>
+<p>除非<strong>你</strong>主动导出或复制，否则这些内容不会离开这台机器。</p>
+
+<h2>3 · 唯一的网络访问：检查更新</h2>
+<p>Bitcoffer <strong>只在你明确要求检查更新时</strong>才发起网络请求。没有后台轮询。</p>
+<table>
+  <tr><th>项目</th><th>内容</th></tr>
+  <tr><td>白名单域名</td><td><code>api.github.com</code>、<code>github.com</code>、<code>objects.githubusercontent.com</code>、<code>release-assets.githubusercontent.com</code></td></tr>
+  <tr><td>发送什么</td><td>对 <code>…/releases/latest/download/update-manifest.json</code> 的标准 HTTPS GET，加上系统 URL session 的默认请求头（如 User-Agent）。<strong>不含密码库数据、不含标识符、除请求路径外不含版本指纹。</strong></td></tr>
+  <tr><td>收到什么</td><td>签名清单（Ed25519）与下载地址；在信任任何内容之前，先用内置于 App 的公钥校验签名</td></tr>
+  <tr><td>下载</td><td><code>Bitcoffer-vX.Y.Z.zip</code>，来自同一白名单；SHA-256 与签名清单比对</td></tr>
+</table>
+<p>检查更新失败时，App 照常离线可用，只会把错误报给你。</p>
+
+<h2>4 · AI 工具 / MCP 集成（需你手动开启）</h2>
+<ul>
+  <li>MCP 服务走 <strong>stdio</strong> 或 <strong>Unix domain socket</strong>（<code>$BITCOFFER_MCP_UDS</code>），从不走 TCP，从不监听公网端口。</li>
+  <li>工具默认<strong>只读</strong>：AI 客户端可以列条目名称与元数据；经你批准后，才能在把密钥注入该子进程环境的前提下执行命令。</li>
+  <li>密钥值从不回传到模型上下文——没有任何一个工具会打印密码。</li>
+  <li>向 Claude Code / CodeBuddy / Codex 注册时只写本地配置文件，不向我们发送任何内容。</li>
+  <li>你若不开启，就没有任何 MCP 进程在跑。</li>
+</ul>
+
+<h2>5 · 诊断</h2>
+<ul>
+  <li>日志写在本地并在磁盘上轮转，不会自行离开这台机器。</li>
+  <li>提交问题时你可以手动附上相关日志——<strong>请先自己看一遍</strong>。日志按设计规则（R2）不含密码值，但会含时间戳、错误码与文件路径。</li>
+  <li>没有自动崩溃上报。App 崩溃时 macOS 可能在 <code>~/Library/Logs/DiagnosticReports/</code> 生成报告，那份文件属于你，只有你选择分享时才会外流。</li>
+</ul>
+
+<h2>6 · 删除你的数据</h2>
+<table>
+  <tr><th>操作</th><th>效果</th></tr>
+  <tr><td>删除条目</td><td>移入库内回收站，可恢复或彻底删除</td></tr>
+  <tr><td>删除密码库</td><td>移除库目录；没有加密备份则<strong>不可恢复</strong></td></tr>
+  <tr><td>删除 App</td><td>移除二进制；库目录仍然保留，除非你自己删除</td></tr>
+  <tr><td>彻底清除</td><td>删除 App <strong>以及</strong> <code>~/Library/Containers/top.cygnusyang.coffer/</code></td></tr>
+</table>
+
+<h2>7 · 儿童与法律</h2>
+<p>Bitcoffer 完全不收集个人数据，因此也不收集未成年人的数据。它是一个本地工具，不是在线服务：没有账号关系，也没有需要签署的数据处理协议。</p>
+
+<h2>8 · 自己验证这些说法</h2>
+<p>信任不该需要你相信一份 markdown 文件：</p>
+<ol>
+  <li><strong>权限声明</strong> —— 构建出的 App 声明 App Sandbox 与恰好一条网络权限：
+    <pre><code>codesign -d --entitlements - /Applications/Bitcoffer.app</code></pre>
+    应当只看到 <code>com.apple.security.app-sandbox</code> 与 <code>com.apple.security.network.client</code>，再无其他 <code>network.*</code> 键。</li>
+  <li><strong>盯着流量</strong> —— 用 Little Snitch / LuLu / <code>nettop</code> 观察，或者干脆断网：除检查更新外，其余功能照常工作。</li>
+  <li><strong>读源码</strong> —— 网络代码只存在于更新模块 <code>macos/Bitcoffer/Updater/</code>，搜索 <code>URLSession</code> 即可枚举全部调用点。</li>
+  <li><strong>看日志</strong> —— <code>~/Library/Containers/top.cygnusyang.coffer/Data/Library/Logs/Bitcoffer-diag.log</code> 是纯文本，直接读。</li>
+</ol>
+
+<h2>9 · 政策变更</h2>
+<p>任何数据处理上的变化都会记录在 <code>CHANGELOG.md</code> 与本文件的 git 历史里。Bitcoffer 没有服务端，因此我们无法在不发布新版本的情况下改变你数据的去向——而每个版本都是签名、可检查的产物。</p>
+
+<h2>10 · 联系我们</h2>
+<ul>
+  <li>安全问题：见 <a href="https://github.com/cygnusyang/bitcoffer/blob/main/SECURITY.md">SECURITY.md</a>（私有通道）。</li>
+  <li>其他一切：<a href="https://github.com/cygnusyang/bitcoffer/issues">GitHub Issues</a>。</li>
+</ul>
+
+<hr>
+<p class="meta">English summary — Bitcoffer collects nothing: no account, no telemetry, no analytics, no cloud sync, no third-party SDKs. Your vault exists only on your Mac, encrypted with your master password. The only network access happens when you click “Check for Updates”, and it goes to four fixed GitHub hosts. See the full <a href="https://github.com/cygnusyang/bitcoffer/blob/main/PRIVACY.md">PRIVACY.md</a> for details and verification steps.</p>
+<p class="meta"><a href="./">← 返回 Bitcoffer 首页</a></p>
+</body>
+</html>
