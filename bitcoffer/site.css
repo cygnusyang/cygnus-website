@@ -3,3 +3,5 @@
 .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:14px;line-height:1;cursor:pointer}
 .theme-toggle:hover{color:var(--ink);border-color:var(--line-strong);background:var(--soft)}
 .theme-toggle svg{display:block}
+/* 网络自证段里的内联命令：等宽 + 细边框，避免在句子里读成普通词 */
+.section-head code,.feature p code{font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;padding:1px 5px;border-radius:5px;background:var(--paper,#fff);border:1px solid var(--line-strong,var(--line,#dfe1e8));color:var(--ink);white-space:nowrap}
