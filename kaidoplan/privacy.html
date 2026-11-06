@@ -2,6 +2,7 @@
 <html lang="zh-Hans">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="KaidoPlan 隐私政策：应用不收集数据，官网只做无 Cookie 的访问计数与订阅。">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KaidoPlan — 隐私政策 / Privacy Policy</title>
 <style>
@@ -16,10 +17,11 @@
   a { color: #4a56d6; }
 </style>
 <script src="../theme.js"></script>
+<link rel="canonical" href="https://ai.cygnusyang.top/kaidoplan/privacy">
 </head>
 <body>
 <h1>KaidoPlan 隐私政策</h1>
-<p class="meta">最后更新：2026-11-01</p>
+<p class="meta">最后更新：2026-11-06（新增「官网」一节）</p>
 
 <p>KaidoPlan（下称「本应用」）不收集、不存储、不传输任何个人信息。</p>
 
@@ -41,13 +43,28 @@
   <li><strong>无第三方共享</strong>：本应用不与任何第三方共享数据，因为不存在可共享的数据。</li>
 </ul>
 
+<h2>官网（与本应用无关的部分）</h2>
+<p>上面说的是「应用内」。这个官网不是应用的一部分，它有自己的两条规则，一并说清：</p>
+<ul>
+  <li><strong>访问计数</strong>：本页会记一次「有人看过」和几次按钮点击（下载、购买、订阅），
+      字段只有事件名、来源标识（例如你从哪篇文章点过来）、界面语言、粗粒度国家码和时间。
+      不设 Cookie，不做跨站跟踪，不采设备指纹、不采 User-Agent，关联不到具体的人。
+      服务端收到的 IP 只用于限流，落库前做不可逆哈希，不保存明文。</li>
+  <li><strong>更新订阅</strong>：如果你主动填了邮箱，邮箱会存在邮件服务商（Resend）的订阅清单里，
+      只用于发版本更新与工作流文章。不发促销，不卖给任何人；每封信底部都有一键退订，
+      退订立即生效。发邮件给我也可以要求删除记录。</li>
+  <li><strong>结账</strong>：点「购买」时页面才会加载 Paddle.js（Paddle 的结账脚本），
+      由它完成支付、发票和税费计算。该脚本可能写入结账所需的最小 Cookie；
+      本站在你点击购买之前不设置任何 Cookie。</li>
+</ul>
+
 <p>如对本政策有疑问，请通过项目主页
    <a href="https://github.com/cygnusyang/KaidoPlan">github.com/cygnusyang/KaidoPlan</a> 的 Issues 联系。</p>
 
 <hr>
 
 <h1>KaidoPlan Privacy Policy</h1>
-<p class="meta">Last updated: 1 November 2026</p>
+<p class="meta">Last updated: 6 November 2026 (added the "Website" section)</p>
 
 <p>KaidoPlan ("the app") does not collect, store or transmit any personal information.</p>
 
@@ -71,7 +88,23 @@
   <li><strong>No third-party sharing</strong>: there is no data to share.</li>
 </ul>
 
+<h2>This website (separate from the app)</h2>
+<p>Everything above is about the app. This website has its own two rules, stated plainly:</p>
+<ul>
+  <li><strong>Visit counting</strong>: this page records one "someone looked" event and a few button
+      clicks (download, buy, subscribe). The fields are an event name, a source tag (e.g. which
+      article you came from), the interface language, a coarse country code and a timestamp.
+      No cookies, no cross-site tracking, no device fingerprint, no User-Agent — nothing that ties
+      a row to a person. The server sees an IP only to rate-limit submissions and stores an
+      irreversible hash, never the address itself.</li>
+  <li><strong>Newsletter</strong>: if you enter your email, it is stored in our email provider
+      (Resend) and used only for release notes and workflow write-ups. No promotions, never sold.
+      Every email has a one-click unsubscribe that takes effect immediately, and you can email me
+      to have the record deleted.</li>
+</ul>
+
 <p>Questions: open an issue at
    <a href="https://github.com/cygnusyang/KaidoPlan">github.com/cygnusyang/KaidoPlan</a>.</p>
+<p style="margin:36px 0 0"><a href="./">← Back to KaidoPlan</a> · <a href="https://github.com/cygnusyang/KaidoPlan/releases/latest">Download for macOS</a></p>
 </body>
 </html>

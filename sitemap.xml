@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 站点根（个人工具集合，英文） -->
+  <url>
+    <loc>https://ai.cygnusyang.top/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/zh</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/"/>
+  </url>
+
+  <!-- 定价与关于 -->
+  <url>
+    <loc>https://ai.cygnusyang.top/pricing</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/about</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- KaidoPlan -->
+  <url>
+    <loc>https://ai.cygnusyang.top/kaidoplan/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/kaidoplan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/kaidoplan/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/kaidoplan/"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/kaidoplan/zh</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/kaidoplan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/kaidoplan/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/kaidoplan/"/>
+  </url>
+
+  <!-- Bitcoffer -->
+  <url>
+    <loc>https://ai.cygnusyang.top/bitcoffer/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/bitcoffer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/bitcoffer/en"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/bitcoffer/en</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/bitcoffer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/bitcoffer/en"/>
+  </url>
+
+  <!-- 法律页：可索引，但不给权重 -->
+  <url>
+    <loc>https://ai.cygnusyang.top/privacy</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/terms</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/refund</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/kaidoplan/privacy</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/kaidoplan/terms</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/kaidoplan/refund</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/bitcoffer/privacy</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.2</priority>
+  </url>
+</urlset>

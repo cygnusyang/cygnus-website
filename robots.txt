@@ -1,0 +1,62 @@
+# robots.txt — ai.cygnusyang.top
+# 2026-11-06：放行主流 AI 爬虫与搜索爬虫，只挡无价值的路径。
+# 说明：本站为静态站，无后台、无 /api，故无 Disallow 项。
+
+User-agent: *
+Allow: /
+
+# 搜索
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# AI 爬虫白名单（GEO）：显式列出，避免被上游默认策略误挡
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Kimi
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+# 已迁移的旧路径不需要抓（同时有 301，双保险）
+User-agent: *
+Disallow: /kaido/
+
+Sitemap: https://ai.cygnusyang.top/sitemap.xml

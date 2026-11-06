@@ -57,7 +57,11 @@
   function sync(btn) {
     var isLight = root.getAttribute('data-theme') === LIGHT;
     btn.innerHTML = isLight ? ICON_MOON : ICON_SUN;          // 亮色时显示「切回暗色」的月亮
-    var label = isLight ? '切换到暗色' : '切换到亮色';
+    // 按页面语言输出，避免英文页读屏念中文
+    var zh = (document.documentElement.lang || '').toLowerCase().indexOf('zh') === 0;
+    var label = zh
+      ? (isLight ? '切换到暗色' : '切换到亮色')
+      : (isLight ? 'Switch to dark theme' : 'Switch to light theme');
     btn.setAttribute('aria-label', label);
     btn.setAttribute('title', label);
     btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');

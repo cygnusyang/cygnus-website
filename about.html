@@ -3,11 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="About these tools — local-first, AI-ready macOS software, built independently by cygnusyang.">
+<meta name="description" content="About these tools — macOS software that lets AI agents act on real work, built independently by cygnusyang.">
 <title>About these tools</title>
-<link rel="canonical" href="https://ai.cygnusyang.top/about.html">
+<link rel="canonical" href="https://ai.cygnusyang.top/about">
 <link rel="stylesheet" href="cygnus.css">
 <script src="theme.js"></script>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ai.cygnusyang.top">
+<meta property="og:title" content="About these tools">
+<meta property="og:description" content="About these tools — macOS software that lets AI agents act on real work, built independently by cygnusyang.">
+<meta property="og:url" content="https://ai.cygnusyang.top/about">
+<meta property="og:image" content="https://ai.cygnusyang.top/kaidoplan/assets/workbench.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About these tools">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -19,14 +28,14 @@
       <button type="button" class="dropbtn" aria-haspopup="true">Products <span class="caret">▾</span></button>
       <div class="dropdown-menu">
         <a href="https://ai.cygnusyang.top/kaidoplan/"><span class="d-title">KaidoPlan</span><span class="d-sub">Project planning</span></a>
-        <a href="https://ai.cygnusyang.top/bitcoffer/en.html"><span class="d-title">Bitcoffer</span><span class="d-sub">Secrets &amp; credentials</span></a>
+        <a href="/bitcoffer/en"><span class="d-title">Bitcoffer</span><span class="d-sub">Secrets &amp; credentials</span></a>
       </div>
     </div>
     <a href="https://cygnusyang.github.io/">Blog</a>
-    <a href="pricing.html">Pricing</a>
-    <a class="active" href="about.html">About</a>
-    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换到亮色"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg></button>
-    <a class="lang" href="zh.html" lang="zh-Hans">中文</a>
+    <a href="pricing">Pricing</a>
+    <a class="active" href="about">About</a>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light theme"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg></button>
+    <a class="lang" href="zh" lang="zh-Hans">中文</a>
   </nav>
 </header>
 
@@ -34,10 +43,10 @@
   <h1>About these tools</h1>
   <p class="meta">Built independently by cygnusyang</p>
 
-  <p>A set of macOS tools along one line: local-first, AI-ready. Two today, more to come.</p>
+  <p>A set of macOS tools along one line: from words to work. Two today, more to come.</p>
 
   <h2>What we make</h2>
-  <p>Both current tools are native macOS, local-first, and ship an MCP server for AI coding tools:</p>
+  <p>Both current tools are native macOS and ship an MCP server, so an agent can act on real work instead of only describing it:</p>
   <ul>
     <li><strong>KaidoPlan</strong> — a project-planning workbench for AI coding agents;</li>
     <li><strong>Bitcoffer</strong> — a local-first password and secret manager.</li>
@@ -47,12 +56,15 @@
   <ul>
     <li><strong>Proprietary</strong>: the source is closed; commercial licences fund ongoing development. Your data still never leaves your machine.</li>
     <li><strong>Data stays local</strong>: no accounts, no cloud sync, no telemetry.</li>
-    <li><strong>Documentation first</strong>: every version ships with design docs and acceptance criteria in the repo.</li>
+    <li><strong>Documentation first</strong>: design docs and acceptance criteria are written before code. Where they can be published, they ship in the repo.</li>
   </ul>
 
   <h2>Contact</h2>
-  <p>For product issues, open an issue on the relevant repository. For sales and licensing,
-     email <a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a>.</p>
+  <p>For product issues, open an issue on
+     <a href="https://github.com/cygnusyang/KaidoPlan/issues">github.com/cygnusyang/KaidoPlan/issues</a>
+     (KaidoPlan) or <a href="https://github.com/cygnusyang/bitcoffer-releases/issues">github.com/cygnusyang/bitcoffer-releases/issues</a>
+     (Bitcoffer). For sales and licensing, email
+     <a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a>.</p>
 </main>
 
 <footer class="footer">
@@ -61,9 +73,9 @@
     <span class="cols">
       <a href="./">Home</a>
       <a href="https://ai.cygnusyang.top/kaidoplan/">KaidoPlan</a>
-      <a href="https://ai.cygnusyang.top/bitcoffer/en.html">Bitcoffer</a>
+      <a href="/bitcoffer/en">Bitcoffer</a>
       <a href="https://cygnusyang.github.io/">Blog</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="pricing">Pricing</a>
     </span>
   </div>
 </footer>
