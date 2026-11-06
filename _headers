@@ -1,0 +1,33 @@
+# Cloudflare Pages 响应头（2026-11-06 迁站时加）
+# 目的：GitHub Pages 无法设置自定义响应头，这里补上安全基线。
+# 注意：暂不启用 CSP。站内有内联 <script>（Paddle checkout、主题切换、埋点），
+#      在没做 nonce 化之前上 CSP 会直接白屏。CSP 列为后续项，不在这里硬上。
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+
+# HTML 不缓存，改完立刻生效；静态资源长缓存
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/kaidoplan/assets/*
+  Cache-Control: public, max-age=604800
+
+/bitcoffer/assets/*
+  Cache-Control: public, max-age=604800
+
+/site.css
+  Cache-Control: public, max-age=3600
+
+/kaidoplan/site.css
+  Cache-Control: public, max-age=3600
+
+/bitcoffer/site.css
+  Cache-Control: public, max-age=3600

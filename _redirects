@@ -1,0 +1,15 @@
+# Cloudflare Pages 重定向规则（2026-11-06）
+# 旧的 /kaido/ 目录已迁到 /kaidoplan/。GitHub Pages 上只能用 meta refresh（不传权重），
+# 这里用真 301。逐条写，是为了让子页面落到对应的新页面，而不是全部落回首页。
+
+/kaido/            /kaidoplan/              301
+/kaido/index.html  /kaidoplan/              301
+/kaido/zh.html     /kaidoplan/zh          301
+/kaido/privacy.html /kaidoplan/privacy     301
+/kaido/terms.html  /kaidoplan/terms       301
+/kaido/refund.html /kaidoplan/refund      301
+/kaido/*           /kaidoplan/              301
+
+# 无扩展名的友好入口
+/kaidoplan  /kaidoplan/  301
+/bitcoffer  /bitcoffer/  301
