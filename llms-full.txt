@@ -1,0 +1,170 @@
+# From words to work — productivity tools that turn what AI can describe into work that actually gets done
+
+> Independent macOS software by cygnus (https://github.com/cygnusyang). We make productivity tools that turn what AI can describe into work that actually gets done. This is a fact sheet, not marketing copy: it records only claims verifiable in the apps, their public repositories and the pages indexed in §4. Pricing below describes the direct-download channel; the Mac App Store builds are still in review.
+
+Last updated 2026-11-06. No promises for features that have not shipped.
+
+---
+
+## 1. Positioning
+
+An AI agent can describe work; the state that work depends on — a project plan, or the credentials an agent needs — has to live somewhere real. These tools keep that state in files on the user's Mac and expose it to agents through MCP servers, so an agent can change real state instead of only describing it. Homepage: https://ai.cygnusyang.top/ (English) and https://ai.cygnusyang.top/zh (Chinese).
+
+---
+
+## 2. KaidoPlan — full fact sheet
+
+### 2.1 Problem
+
+AI agents (Claude Code, Codex and similar) work task by task. The plan itself — WBS, dependencies, dates, progress — tends to live in chat history, where nobody can check whether the dependency chain still adds up. KaidoPlan holds the plan in one inspectable place and computes the arithmetic a checklist does not.
+
+### 2.2 Plan format
+
+- The plan is a **single local plain-JSON file** with the `.kaido` extension and `formatVersion` 2.
+- The file carries `project` metadata, `tasks`, `resources` and `baselines`, and can be moved, copied and backed up like any other document.
+- This is an architecture fact about where the plan is stored, not a product-line "local-first" label.
+
+### 2.3 Scheduling and validation
+
+- Forward and backward passes over dependencies, constraints and a work calendar produce real dates.
+- **Critical path**: computes the chain that sets the earliest finish date, plus total and free slack per task.
+- **Violation checks**: date conflicts, dependency cycles, tasks outside the project window, and blocked chains are reported in the workbench before they reach a delivery date.
+- WBS, groups and milestones; Gantt / timeline views; plan validation and progress tracking.
+
+### 2.4 Agent interface
+
+- A built-in **MCP server with 21 tools** over stdio JSON-RPC, plus a **CLI** exposing the same operations.
+- Named tools in the MCP surface include `baseline_create`, `baseline_variance`, `schedule_compute`, `schedule_critical_path` and `violations_list`, alongside task, dependency, resource and WBS-import operations.
+- On the free tier an agent can **read** the plan over MCP/CLI and answer questions about it, but cannot write to it. **AI write-back** — task status, actual dates, new tasks — requires Pro.
+
+### 2.5 Commercial model — direct-download build
+
+| Tier | What it includes | Price |
+|---|---|---|
+| 30-day full-feature trial | Every feature unlocked; no account, no card | $0 |
+| Free tier (after the trial) | Full GUI planning workbench; AI read-only; 3 delivery-report exports per month, preview unlimited | $0 forever |
+| KaidoPlan Pro | AI write-back through the MCP/CLI tools; unlimited delivery-report exports; cancel anytime | $9.99 / year |
+
+- The trial **downgrades** to the free tier when it ends; the app does not stop working and nothing already built is locked, exported off the machine or deleted. This is a downgrade, not a switch-off.
+- The two things that end with the trial are AI write access and unlimited exports.
+- KaidoPlan direct-download purchases carry a **14-day no-questions-asked refund**: https://ai.cygnusyang.top/refund
+- Checkout for direct downloads is handled by **Paddle.com Market Ltd** as Merchant of Record: https://ai.cygnusyang.top/pricing
+
+### 2.6 Install
+
+```bash
+brew install --cask cygnusyang/kaidoplan/kaidoplan      # macOS app
+brew install cygnusyang/kaidoplan/kaidoplan-cli         # CLI + MCP server
+```
+
+Or download the latest build: https://github.com/cygnusyang/KaidoPlan/releases/latest
+
+### 2.7 Pages
+
+- Product (English): https://ai.cygnusyang.top/kaidoplan/
+- Product (Chinese): https://ai.cygnusyang.top/kaidoplan/zh
+- Policies: https://ai.cygnusyang.top/kaidoplan/privacy · https://ai.cygnusyang.top/kaidoplan/terms · https://ai.cygnusyang.top/kaidoplan/refund
+
+### 2.8 Version basis
+
+The 30-day trial and the free-tier write policy are implemented in KaidoPlan **v3.1.0** (released 2026-11-06) by the source components `TrialClock` and `MCPWritePolicy`. The model above applies to that release and later direct-download builds. Source: https://github.com/cygnusyang/KaidoPlan
+
+---
+
+## 3. Bitcoffer — full fact sheet
+
+### 3.1 Problem
+
+Passwords, API keys and other credentials need to be usable by people and by AI agents, without passing through a third-party server.
+
+### 3.2 Architecture and security posture
+
+- An encrypted **on-device vault**, unlocked with **Touch ID**, running under the **App Sandbox**.
+- No cloud sync, no account, no telemetry. The only outbound request the app can make is the update check, which fetches a signed manifest from GitHub Releases; this claim is intended to be verifiable rather than merely promised.
+- A **local MCP server** hands secrets to a child process's environment without returning the secret values to the model — the agent gets the result, not the value.
+- "local-first" is **Bitcoffer's own product-level security commitment**. It is not a label applied to the whole product line.
+- Platform: macOS 14 or later.
+
+### 3.3 Commercial model
+
+- **$9.99 USD, one-time licence**.
+- This is the current wording; the commercial model is under review. Live terms are at https://ai.cygnusyang.top/pricing.
+- Checkout for direct downloads is handled by Paddle.com Market Ltd as Merchant of Record. Policy pages: https://ai.cygnusyang.top/refund · https://ai.cygnusyang.top/terms
+
+### 3.4 Install
+
+```bash
+brew install --cask cygnusyang/bitcoffer/bitcoffer
+```
+
+Or download the latest build: https://github.com/cygnusyang/bitcoffer-releases/releases/latest
+
+### 3.5 Pages
+
+- Product (Chinese): https://ai.cygnusyang.top/bitcoffer/
+- Product (English): https://ai.cygnusyang.top/bitcoffer/en
+- Privacy: https://ai.cygnusyang.top/bitcoffer/privacy
+- Public source and release repositories: https://github.com/cygnusyang/bitcoffer and https://github.com/cygnusyang/bitcoffer-releases
+
+---
+
+## 4. Page index
+
+Every URL below is a no-extension, directly reachable page.
+
+| Page | URL |
+|---|---|
+| Home (English) | https://ai.cygnusyang.top/ |
+| Home (Chinese) | https://ai.cygnusyang.top/zh |
+| Pricing | https://ai.cygnusyang.top/pricing |
+| About the developer | https://ai.cygnusyang.top/about |
+| Privacy | https://ai.cygnusyang.top/privacy |
+| Terms of sale | https://ai.cygnusyang.top/terms |
+| Refund policy | https://ai.cygnusyang.top/refund |
+| KaidoPlan (English) | https://ai.cygnusyang.top/kaidoplan/ |
+| KaidoPlan (Chinese) | https://ai.cygnusyang.top/kaidoplan/zh |
+| KaidoPlan privacy | https://ai.cygnusyang.top/kaidoplan/privacy |
+| KaidoPlan terms | https://ai.cygnusyang.top/kaidoplan/terms |
+| KaidoPlan refunds | https://ai.cygnusyang.top/kaidoplan/refund |
+| Bitcoffer (Chinese) | https://ai.cygnusyang.top/bitcoffer/ |
+| Bitcoffer (English) | https://ai.cygnusyang.top/bitcoffer/en |
+| Bitcoffer privacy | https://ai.cygnusyang.top/bitcoffer/privacy |
+
+---
+
+## 5. Key facts
+
+| Item | Value |
+|---|---|
+| Developer | cygnus — independent developer, not a company: https://github.com/cygnusyang |
+| Platform | macOS 14 or later |
+| KaidoPlan plan file | `.kaido`, plain JSON, `formatVersion` 2, single local file |
+| KaidoPlan scheduling | critical path, total/free slack, violation checks (date conflicts, cycles, out-of-range tasks) |
+| KaidoPlan MCP | 21 tools, stdio JSON-RPC; plus a CLI |
+| KaidoPlan version basis | v3.1.0, `TrialClock` / `MCPWritePolicy` |
+| KaidoPlan direct-download trial | 30 days, all features, no account or card |
+| KaidoPlan free tier | full GUI planning, AI read-only, 3 delivery-report exports/month |
+| KaidoPlan Pro | $9.99 / year — AI write-back, unlimited exports |
+| KaidoPlan refund | 14-day no-questions-asked on direct-download purchases |
+| Bitcoffer architecture | encrypted on-device vault, Touch ID, App Sandbox, no cloud sync / account / telemetry |
+| Bitcoffer MCP | local MCP server; secret values are not returned to the model |
+| Bitcoffer price | $9.99 USD, one-time licence (current wording; model under review) |
+| Checkout (direct downloads) | Paddle.com Market Ltd as Merchant of Record |
+| Mac App Store builds | in review; no availability claim made here |
+| Contact | ruohuyang@163.com |
+
+---
+
+## 6. How to verify
+
+- Technical claims about KaidoPlan (the `.kaido` schema, `formatVersion` 2, the 21-tool MCP surface, named tools, `TrialClock` / `MCPWritePolicy`) are checkable in the KaidoPlan source repository: https://github.com/cygnusyang/KaidoPlan
+- Commercial terms, trial length and refund wording are checkable on the product and pricing pages in §4.
+- Bitcoffer's security posture and install command are documented in its product pages and its Homebrew tap README.
+- Excluded from this file on purpose: the site's hosting platform, Mac App Store availability or price-parity claims, device-activation counts, and time-limited offers that are not confirmed.
+
+---
+
+## 7. Contact
+
+- Email: ruohuyang@163.com
+- Issues: https://github.com/cygnusyang/KaidoPlan/issues
