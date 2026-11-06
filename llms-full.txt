@@ -87,8 +87,8 @@ Passwords, API keys and other credentials need to be usable by people and by AI 
 
 ### 3.3 Commercial model
 
-- **$9.99 USD, one-time licence**.
-- This is the current wording; the commercial model is under review. Live terms are at https://ai.cygnusyang.top/pricing.
+- **$9.99 USD per year**.
+- Live terms are at https://ai.cygnusyang.top/pricing.
 - Checkout for direct downloads is handled by Paddle.com Market Ltd as Merchant of Record. Policy pages: https://ai.cygnusyang.top/refund · https://ai.cygnusyang.top/terms
 
 ### 3.4 Install
@@ -148,7 +148,7 @@ Every URL below is a no-extension, directly reachable page.
 | KaidoPlan refund | 14-day no-questions-asked on direct-download purchases |
 | Bitcoffer architecture | encrypted on-device vault, Touch ID, App Sandbox, no cloud sync / account / telemetry |
 | Bitcoffer MCP | local MCP server; secret values are not returned to the model |
-| Bitcoffer price | $9.99 USD, one-time licence (current wording; model under review) |
+| Bitcoffer price | $9.99 USD per year |
 | Checkout (direct downloads) | Paddle.com Market Ltd as Merchant of Record |
 | Mac App Store builds | in review; no availability claim made here |
 | Contact | ruohuyang@163.com |

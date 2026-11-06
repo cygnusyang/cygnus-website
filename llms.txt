@@ -28,7 +28,7 @@ Last updated 2026-11-06. No promises for features that have not shipped.
 
 - **Problem**: passwords, keys and credentials need to be usable by people and by AI agents without passing through a third-party server.
 - **How it works**: an encrypted on-device vault, Touch ID unlock and the App Sandbox; no cloud sync, no account, no telemetry, and the only outbound request is the update check. A local MCP server hands secrets to agents without returning the secret values to the model. "local-first" here is Bitcoffer's own product-level security commitment, not a label applied to the whole product line.
-- **Price**: **$9.99 USD, one-time licence**. This is the current wording; the commercial model is under review. Live terms: https://ai.cygnusyang.top/pricing
+- **Price**: **$9.99 USD per year**. Live terms: https://ai.cygnusyang.top/pricing
 - **Install**: `brew install --cask cygnusyang/bitcoffer/bitcoffer` or GitHub Releases: https://github.com/cygnusyang/bitcoffer-releases/releases/latest
 - **Pages**: https://ai.cygnusyang.top/bitcoffer/ (Chinese) · https://ai.cygnusyang.top/bitcoffer/en (English)
 
@@ -43,7 +43,7 @@ Last updated 2026-11-06. No promises for features that have not shipped.
 | KaidoPlan direct-download trial | 30 days, all features, then downgrade to free tier |
 | KaidoPlan free tier | full GUI planning, AI read-only, 3 delivery-report exports/month |
 | KaidoPlan Pro | $9.99 / year — AI write-back, unlimited exports |
-| Bitcoffer price | $9.99 USD, one-time licence (current wording; model under review) |
+| Bitcoffer price | $9.99 USD per year |
 | Checkout for direct downloads | Paddle.com Market Ltd as Merchant of Record |
 | Mac App Store builds | in review; no availability claim made here |
 | Refunds | see https://ai.cygnusyang.top/refund |

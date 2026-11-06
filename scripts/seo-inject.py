@@ -117,7 +117,7 @@ def bitcoffer(lang: str) -> dict:
                 "@type": "Offer",
                 "price": "9.99",
                 "priceCurrency": "USD",
-                "description": "One-time perpetual licence." if en else "一次性买断。",
+                "description": "Billed annually." if en else "按年计费。",
             }
         ],
     }
