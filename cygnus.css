@@ -194,3 +194,10 @@ p{margin:0}
 .theme-toggle:hover{color:var(--ink);border-color:var(--line-strong);background:var(--soft)}
 .theme-toggle:focus-visible{outline:2px solid var(--star);outline-offset:2px}
 .theme-toggle svg{display:block}
+
+.backlink{margin:40px 0 0;font-size:15px;color:var(--muted)}
+.backlink a{text-decoration:underline;text-underline-offset:3px}
+.backlink a:hover{color:var(--ink)}
+
+/* 中文页：eyebrow 不做大写转换，避免 macOS 被写成 MACOS */
+html[lang^="zh"] .eyebrow{text-transform:none;letter-spacing:.08em}
