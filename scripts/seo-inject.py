@@ -117,7 +117,7 @@ def bitcoffer(lang: str) -> dict:
                 "@type": "Offer",
                 "price": "9.99",
                 "priceCurrency": "USD",
-                "description": "One-time perpetual licence, 2 Macs." if en else "一次性买断，2 台 Mac 激活。",
+                "description": "One-time perpetual licence." if en else "一次性买断。",
             }
         ],
     }
