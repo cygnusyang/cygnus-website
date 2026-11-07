@@ -85,3 +85,8 @@
   .pill-s{display:inline}
   .pill{padding:7px 10px!important}
 }
+
+/* Keep the release example readable as the layout narrows. */
+@media (max-width:1200px){.hero{gap:32px}}
+@media (max-width:1024px){.hero{grid-template-columns:minmax(0,1fr);gap:28px}.hero-art{max-width:780px}}
+@media (max-width:480px){.hero{gap:24px}.hero h1{font-size:clamp(30px,9vw,38px)}.hero-art{margin-inline:0}.hero-art:before{inset:8% 0 -4% 8%}}
