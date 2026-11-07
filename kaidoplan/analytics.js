@@ -16,6 +16,7 @@
 (function () {
   var ENDPOINT = "https://kaido-license-service.cygnusyang.workers.dev/t";
   var SITE = document.documentElement.getAttribute("data-site") || "kaidoplan";
+  var REF_KEY = SITE === "kaidoplan" ? "k_ref" : "k_ref_" + SITE;
   var LANG = (/^zh/i.test(document.documentElement.lang || "") ? "zh" : "en");
 
   // 来源标识：优先 utm_source，其次 ref，最后 referrer 的主机名。
@@ -39,10 +40,10 @@
   var ref = "";
   try {
     // 同一次会话内记住来源：用户在页内跳转（pricing → hero）时不该丢掉归因。
-    ref = sessionStorage.getItem("k_ref") || "";
+    ref = sessionStorage.getItem(REF_KEY) || "";
     if (!ref) {
       ref = sourceTag();
-      if (ref) sessionStorage.setItem("k_ref", ref);
+      if (ref) sessionStorage.setItem(REF_KEY, ref);
     }
   } catch (e) {
     ref = sourceTag();
