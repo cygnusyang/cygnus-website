@@ -1,0 +1,302 @@
+{
+  "formatVersion" : 2,
+  "project" : {
+    "createdAt" : "2026-11-07T05:25:16Z",
+    "direction" : "forward",
+    "id" : "EAB70085-B94A-470A-88AC-B0A160F369F4",
+    "projectStart" : "2026-11-06T01:00:00Z",
+    "title" : "KaidoPlan Release Demo",
+    "updatedAt" : "2026-11-07T05:25:16Z"
+  },
+  "resources" : [
+
+  ],
+  "tasks" : [
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+
+      ],
+      "durationDays" : 1,
+      "id" : "1E316637-C4BA-4FDD-87AD-9FC85DD367E5",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Define release scope"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "1E316637-C4BA-4FDD-87AD-9FC85DD367E5",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 2,
+      "id" : "D6E0BC9E-BDBE-4B34-8FFB-9BCC7F3AAE43",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Implement trial clock"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "D6E0BC9E-BDBE-4B34-8FFB-9BCC7F3AAE43",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 2,
+      "id" : "359CF30B-F00C-4E19-A646-DD5BC427FAA4",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Enforce AI write policy"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "1E316637-C4BA-4FDD-87AD-9FC85DD367E5",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 1,
+      "id" : "5FE7994E-C003-4AB3-84DD-8945CA86FD59",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Update install guide"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "359CF30B-F00C-4E19-A646-DD5BC427FAA4",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 2,
+      "id" : "CEB58149-E21F-4C83-A65D-D5F5FE7EA1F3",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Verify license states"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "359CF30B-F00C-4E19-A646-DD5BC427FAA4",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 1,
+      "id" : "573AC4C1-790C-40B9-A772-0256329BF96E",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Run localization checks"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "CEB58149-E21F-4C83-A65D-D5F5FE7EA1F3",
+          "type" : "fs"
+        },
+        {
+          "lagDays" : 0,
+          "predecessorID" : "573AC4C1-790C-40B9-A772-0256329BF96E",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 1,
+      "id" : "1F03670E-041E-4F28-AFB7-50ED9192B258",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Build release candidate"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "1F03670E-041E-4F28-AFB7-50ED9192B258",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 1,
+      "id" : "13604A37-759E-4FB7-B01F-D6040C4D549B",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Sign and notarize"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "13604A37-759E-4FB7-B01F-D6040C4D549B",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 2,
+      "id" : "BC2896E4-3EBA-4A06-A16E-AF0C28C27292",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Test clean installation"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "5FE7994E-C003-4AB3-84DD-8945CA86FD59",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 1,
+      "id" : "33FCB958-4CB8-4643-BF40-5326EC0F8FFB",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Update release notes"
+    },
+    {
+      "assignments" : [
+
+      ],
+      "constraint" : {
+        "endNoLaterThan" : {
+          "_0" : "2026-11-17T00:00:00Z"
+        }
+      },
+      "dependencies" : [
+        {
+          "lagDays" : 0,
+          "predecessorID" : "BC2896E4-3EBA-4A06-A16E-AF0C28C27292",
+          "type" : "fs"
+        },
+        {
+          "lagDays" : 0,
+          "predecessorID" : "33FCB958-4CB8-4643-BF40-5326EC0F8FFB",
+          "type" : "fs"
+        }
+      ],
+      "durationDays" : 1,
+      "id" : "76A8863A-8520-4B58-8A2F-B85E99C4F271",
+      "kind" : "task",
+      "notes" : "",
+      "priority" : "normal",
+      "progress" : 0,
+      "schedulingMode" : "auto",
+      "schedulingPolicy" : "asap",
+      "status" : "pending",
+      "tags" : [
+
+      ],
+      "title" : "Publish release"
+    }
+  ]
+}

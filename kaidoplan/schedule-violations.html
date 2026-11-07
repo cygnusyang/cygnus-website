@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" data-site="kaidoplan" data-page="schedule-violations">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Check schedule violations before committing a date | KaidoPlan</title>
+<meta name="description" content="Run KaidoPlan’s violation report and distinguish a deadline conflict from its effects on upstream tasks.">
+<link rel="canonical" href="https://ai.cygnusyang.top/kaidoplan/schedule-violations.html">
+<meta property="og:title" content="Check schedule violations before committing a date"><meta property="og:description" content="Run KaidoPlan’s violation report and distinguish a deadline conflict from its effects on upstream tasks.">
+<meta property="og:url" content="https://ai.cygnusyang.top/kaidoplan/schedule-violations.html"><meta property="og:image" content="https://ai.cygnusyang.top/kaidoplan/assets/workbench-en.webp">
+<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="guides.css">
+<script src="../theme.js"></script><script src="analytics.js" defer></script>
+</head>
+<body><main class="wrap guide">
+<nav aria-label="Product"><a href="./">KaidoPlan home</a></nav>
+<p class="eyebrow">Feature guide</p><h1>Check schedule violations before committing a date</h1><p>Run KaidoPlan’s violation report and distinguish a deadline conflict from its effects on upstream tasks.</p>
+<div class="actions"><a class="button" href="https://github.com/cygnusyang/KaidoPlan/releases/latest" data-track="download_click" data-track-page="schedule-violations">Download KaidoPlan for macOS</a>
+<a href="assets/release-demo.kaido" download>Download the demo plan</a></div>
+<h2>Run the report on the current plan</h2>
+<p>Open the violations view in KaidoPlan or run the CLI below. The public demo produces a finish-constraint conflict for Publish release plus negative-slack entries on its upstream chain. A report with several entries does not necessarily mean there are several independent causes.</p>
+<pre><code>kaidoplan violations --file release-demo.kaido --lang en
+kaidoplan schedule path --file release-demo.kaido --lang en</code></pre>
+<h2>Fix the cause in a copy</h2>
+<p>Read the failing task, constraint and predecessors together. Check whether the target date is fixed and whether the tasks can legitimately overlap. Change only assumptions you can justify, recompute and rerun the report. Keep the original file so you can compare changes or roll back.</p>
+<h2>Know what the check can tell you</h2>
+<p>A passing report means the model found no reported violation under the inputs you supplied. It cannot verify that estimates are realistic, that someone is available or that a release will pass review. Check those assumptions with owners and update the model when circumstances change.</p>
+<nav aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="quickstart.html">Run your first KaidoPlan schedule on macOS</a></li><li><a href="continue-across-sessions.html">Keep a project plan across coding-agent sessions</a></li><li><a href="find-release-blockers.html">Find the tasks pushing back a release date</a></li><li><a href="work-breakdown-structure.html">Build a work breakdown structure in KaidoPlan</a></li><li><a href="kaidoplan-vs-handoff-md.html">KaidoPlan vs. HANDOFF.md for coding-agent projects</a></li></ul></nav>
+</main></body></html>
