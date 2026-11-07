@@ -125,15 +125,15 @@ def bitcoffer(lang: str) -> dict:
 
 # 每页：url / og:locale / 分享图（相对路径）/ JSON-LD
 PAGES = {
-    "index.html": dict(url=f"{BASE}/", locale="en", image="/kaidoplan/assets/workbench.png",
+    "index.html": dict(url=f"{BASE}/", locale="en", image="/kaidoplan/assets/workbench-en.webp",
                        ld=[PERSON, WEBSITE], alt=("zh_Hans", "/zh")),
-    "zh.html": dict(url=f"{BASE}/zh", locale="zh_Hans", image="/kaidoplan/assets/workbench.png",
+    "zh.html": dict(url=f"{BASE}/zh", locale="zh_Hans", image="/kaidoplan/assets/workbench-en.webp",
                     ld=[PERSON, WEBSITE], alt=("en", "/")),
-    "pricing.html": dict(url=f"{BASE}/pricing", locale="en", image="/kaidoplan/assets/workbench.png"),
-    "about.html": dict(url=f"{BASE}/about", locale="en", image="/kaidoplan/assets/workbench.png"),
-    "kaidoplan/index.html": dict(url=f"{BASE}/kaidoplan/", locale="en", image="/kaidoplan/assets/workbench.png",
+    "pricing.html": dict(url=f"{BASE}/pricing", locale="en", image="/kaidoplan/assets/workbench-en.webp"),
+    "about.html": dict(url=f"{BASE}/about", locale="en", image="/kaidoplan/assets/workbench-en.webp"),
+    "kaidoplan/index.html": dict(url=f"{BASE}/kaidoplan/", locale="en", image="/kaidoplan/assets/workbench-en.webp",
                                  ld=[kaidoplan("en")], alt=("zh_Hans", "/kaidoplan/zh")),
-    "kaidoplan/zh.html": dict(url=f"{BASE}/kaidoplan/zh", locale="zh_Hans", image="/kaidoplan/assets/workbench.png",
+    "kaidoplan/zh.html": dict(url=f"{BASE}/kaidoplan/zh", locale="zh_Hans", image="/kaidoplan/assets/workbench-en.webp",
                               ld=[kaidoplan("zh")], alt=("en", "/kaidoplan/")),
     "kaidoplan/privacy.html": dict(url=f"{BASE}/kaidoplan/privacy", locale="zh_Hans", canonical_only=True),
     "kaidoplan/terms.html": dict(url=f"{BASE}/kaidoplan/terms", locale="zh_Hans", canonical_only=True),
