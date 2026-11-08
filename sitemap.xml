@@ -74,6 +74,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/bitcoffer/en"/>
   </url>
 
+  <url>
+    <loc>https://ai.cygnusyang.top/bitcoffer/guides/migrate.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- 法律页：可索引，但不给权重 -->
   <url>
     <loc>https://ai.cygnusyang.top/privacy</loc>
