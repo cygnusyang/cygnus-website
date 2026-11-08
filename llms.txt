@@ -2,7 +2,7 @@
 
 > Independent macOS software by cygnus (https://github.com/cygnusyang). We make productivity tools that turn what AI can describe into work that actually gets done. This file records only facts verifiable in the apps, their public repositories and the pages linked below. Pricing below describes the direct-download channel; the Mac App Store builds are still in review.
 
-Last updated 2026-11-06. No promises for features that have not shipped.
+Last updated 2026-11-08. No promises for features that have not shipped.
 
 ## Products
 
@@ -21,7 +21,8 @@ Last updated 2026-11-06. No promises for features that have not shipped.
   - App: `brew install --cask cygnusyang/kaidoplan/kaidoplan`
   - CLI + MCP: `brew install cygnusyang/kaidoplan/kaidoplan-cli`
   - Or GitHub Releases: https://github.com/cygnusyang/KaidoPlan/releases/latest
-- **Pages**: https://ai.cygnusyang.top/kaidoplan/ (English) · https://ai.cygnusyang.top/kaidoplan/zh (Chinese)
+- **Pages**: https://kaidoplan.cygnusyang.top/ (English) · https://kaidoplan.cygnusyang.top/zh.html (Chinese)
+- **Guides and answers**: https://kaidoplan.cygnusyang.top/guides.html · **Release notes**: https://kaidoplan.cygnusyang.top/changelog.html
 - **Repository**: https://github.com/cygnusyang/KaidoPlan
 
 ### Bitcoffer — local-first password and credential manager (macOS 14+)
@@ -31,6 +32,7 @@ Last updated 2026-11-06. No promises for features that have not shipped.
 - **Price**: **$9.99 USD per year**. Live terms: https://ai.cygnusyang.top/pricing
 - **Install**: `brew install --cask cygnusyang/bitcoffer/bitcoffer` or GitHub Releases: https://github.com/cygnusyang/bitcoffer-releases/releases/latest
 - **Pages**: https://ai.cygnusyang.top/bitcoffer/ (Chinese) · https://ai.cygnusyang.top/bitcoffer/en (English)
+- **Migration guide**: https://ai.cygnusyang.top/bitcoffer/guides/migrate.html
 
 ## Key facts
 
