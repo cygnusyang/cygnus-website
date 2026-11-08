@@ -37,24 +37,6 @@
   </url>
 
   <!-- KaidoPlan -->
-  <url>
-    <loc>https://ai.cygnusyang.top/kaidoplan/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/kaidoplan/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/kaidoplan/zh"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/kaidoplan/"/>
-  </url>
-  <url>
-    <loc>https://ai.cygnusyang.top/kaidoplan/zh</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/kaidoplan/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/kaidoplan/zh"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/kaidoplan/"/>
-  </url>
 
   <!-- Bitcoffer -->
   <url>
@@ -98,29 +80,8 @@
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://ai.cygnusyang.top/kaidoplan/privacy</loc>
-    <lastmod>2026-11-06</lastmod>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://ai.cygnusyang.top/kaidoplan/terms</loc>
-    <lastmod>2026-11-06</lastmod>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://ai.cygnusyang.top/kaidoplan/refund</loc>
-    <lastmod>2026-11-06</lastmod>
-    <priority>0.2</priority>
-  </url>
-  <url>
     <loc>https://ai.cygnusyang.top/bitcoffer/privacy</loc>
     <lastmod>2026-11-06</lastmod>
     <priority>0.2</priority>
   </url>
-  <url><loc>https://ai.cygnusyang.top/kaidoplan/quickstart.html</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://ai.cygnusyang.top/kaidoplan/continue-across-sessions.html</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://ai.cygnusyang.top/kaidoplan/find-release-blockers.html</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://ai.cygnusyang.top/kaidoplan/work-breakdown-structure.html</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://ai.cygnusyang.top/kaidoplan/schedule-violations.html</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://ai.cygnusyang.top/kaidoplan/kaidoplan-vs-handoff-md.html</loc><lastmod>2026-11-07</lastmod></url>
 </urlset>

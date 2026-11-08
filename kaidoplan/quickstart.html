@@ -1,29 +1,21 @@
 <!doctype html>
-<html lang="en" data-site="kaidoplan" data-page="quickstart">
+<html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Run your first KaidoPlan schedule on macOS | KaidoPlan</title>
-<meta name="description" content="Open a public release plan and calculate its schedule, critical path and deadline conflicts.">
-<link rel="canonical" href="https://ai.cygnusyang.top/kaidoplan/quickstart.html">
-<meta property="og:title" content="Run your first KaidoPlan schedule on macOS"><meta property="og:description" content="Open a public release plan and calculate its schedule, critical path and deadline conflicts.">
-<meta property="og:url" content="https://ai.cygnusyang.top/kaidoplan/quickstart.html"><meta property="og:image" content="https://ai.cygnusyang.top/kaidoplan/assets/workbench-en.webp">
-<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="guides.css">
-<script src="../theme.js"></script><script src="analytics.js" defer></script>
+<meta charset="utf-8">
+<title>KaidoPlan has moved</title>
+<link rel="canonical" href="https://kaidoplan.cygnusyang.top/guides/kaidoplan-quickstart.html">
+<meta name="robots" content="noindex,follow">
+<meta http-equiv="refresh" content="0; url=https://kaidoplan.cygnusyang.top/guides/kaidoplan-quickstart.html">
+<style>html,body{margin:0;height:100%;background:#f7f8fa;color:#1b1e24;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;display:flex;align-items:center;justify-content:center}main{text-align:center;padding:24px}a{color:#4a57e8}</style>
+<script>
+(function () {
+  location.replace("https://kaidoplan.cygnusyang.top/guides/kaidoplan-quickstart.html" + location.search + location.hash);
+})();
+</script>
 </head>
-<body><main class="wrap guide">
-<nav aria-label="Product"><a href="./">KaidoPlan home</a></nav>
-<p class="eyebrow">Quickstart</p><h1>Run your first KaidoPlan schedule on macOS</h1><p>Open a public release plan and calculate its schedule, critical path and deadline conflicts.</p>
-<div class="actions"><a class="button" href="https://github.com/cygnusyang/KaidoPlan/releases/latest" data-track="download_click" data-track-page="quickstart">Download KaidoPlan for macOS</a>
-<a href="assets/release-demo.kaido" download>Download the demo plan</a></div>
-<h2>Install and open the sample</h2>
-<p>Download KaidoPlan for macOS from GitHub Releases. If you want the CLI walkthrough, install the separate CLI formula below. Download the public sample into your working directory. It contains 11 fictional release tasks and a deliberately tight deadline. It is safe to inspect and edit a copy.</p>
-<pre><code>brew install cygnusyang/kaidoplan/kaidoplan-cli
-kaidoplan project summary --file release-demo.kaido --lang en
-kaidoplan schedule compute --file release-demo.kaido --lang en
-kaidoplan violations --file release-demo.kaido --lang en</code></pre>
-<h2>Check your result</h2>
-<p>The summary should show 11 tasks. The schedule lists start and finish dates for the release tasks. The violation report should flag Publish release: its predecessors do not fit the existing finish constraint. Use the report to identify the cause before changing any dates.</p>
-<h2>Continue in the app</h2>
-<p>Open the same file in KaidoPlan to see the task list and Gantt chart. For your own project, start with a few delivery tasks, connect the dependencies you know, and add constraints only for commitments that must hold. Rerun the check after changing the plan.</p>
-<nav aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="continue-across-sessions.html">Keep a project plan across coding-agent sessions</a></li><li><a href="find-release-blockers.html">Find the tasks pushing back a release date</a></li><li><a href="work-breakdown-structure.html">Build a work breakdown structure in KaidoPlan</a></li><li><a href="schedule-violations.html">Check schedule violations before committing a date</a></li><li><a href="kaidoplan-vs-handoff-md.html">KaidoPlan vs. HANDOFF.md for coding-agent projects</a></li></ul></nav>
-</main></body></html>
+<body>
+<main>
+  <p>KaidoPlan now lives at <a href="https://kaidoplan.cygnusyang.top/guides/kaidoplan-quickstart.html">https://kaidoplan.cygnusyang.top/guides/kaidoplan-quickstart.html</a></p>
+</main>
+</body>
+</html>
