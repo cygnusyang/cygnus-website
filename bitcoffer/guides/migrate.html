@@ -2,13 +2,13 @@
 <html lang="zh-Hans">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bitcoffer 迁入与恢复指南：从 1Password、Bitwarden 或 CSV 搬过来</title>
-<meta name="description" content="把凭据迁进 Bitcoffer 的完整路径：从 1Password（1PUX / OPVault）、Bitwarden JSON 或 CSV 导入，预检报告怎么看，导入后怎么校验条目数，以及先用合成数据做一次备份恢复演练。">
+<title>Bitcoffer 迁入与回滚指南：1Password、Bitwarden、macOS 密码、CSV</title>
+<meta name="description" content="把凭据迁进 Bitcoffer 的完整路径：先确认不是只读态，再从 1Password（1PUX / OPVault）、Bitwarden JSON、macOS 密码 App 或 CSV 导入，读预检报告、核对条目数、抽查登录，并用三级回滚兜住失败。">
 <link rel="canonical" href="https://ai.cygnusyang.top/bitcoffer/guides/migrate.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Bitcoffer">
-<meta property="og:title" content="Bitcoffer 迁入与恢复指南">
-<meta property="og:description" content="从 1Password、Bitwarden 或 CSV 迁入本地密码库，并先做一次可恢复性演练。">
+<meta property="og:title" content="Bitcoffer 迁入与回滚指南">
+<meta property="og:description" content="先确认许可状态，再按格式导入、核对条目数、抽查登录；失败时有库级、备份级、条目级三条回滚路。">
 <meta property="og:url" content="https://ai.cygnusyang.top/bitcoffer/guides/migrate.html">
 <meta property="og:locale" content="zh_CN">
 <meta name="theme-color" content="#14161c">
@@ -19,18 +19,19 @@
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "把凭据从其他密码管理器迁入 Bitcoffer",
-  "description": "导出源数据、按格式导入、读预检报告、校验条目数，并用合成数据完成一次加密备份与恢复演练。",
+  "description": "先确认许可状态不是只读态，再导出源数据、按格式导入、读预检报告、核对条目数与抽查登录，并准备好三级回滚。",
   "inLanguage": "zh-Hans",
   "datePublished": "2026-11-08",
-  "dateModified": "2026-11-08",
+  "dateModified": "2026-11-09",
   "author": {"@type": "Person", "name": "cygnus", "url": "https://github.com/cygnusyang"},
   "about": {"@type": "SoftwareApplication", "name": "Bitcoffer", "operatingSystem": "macOS", "url": "https://ai.cygnusyang.top/bitcoffer/"},
   "step": [
-    {"@type": "HowToStep", "name": "导出源数据", "text": "从原管理器导出 1PUX、OPVault、Bitwarden JSON 或 CSV。"},
-    {"@type": "HowToStep", "name": "先导入低风险条目", "text": "第一次只导入一小组非关键凭据，确认字段映射正确。"},
-    {"@type": "HowToStep", "name": "读预检报告", "text": "导入前的预检会列出将被跳过的行和原因，先看完再执行。"},
-    {"@type": "HowToStep", "name": "校验条目数", "text": "导入后核对条目数与源文件行数，差额要能解释。"},
-    {"@type": "HowToStep", "name": "做加密备份并演练恢复", "text": "用合成数据走一遍备份与恢复，确认真能还原再搬真实凭据。"}
+    {"@type": "HowToStep", "name": "确认不是只读态", "text": "试用到期、订阅到期或已撤销的状态下，导入与恢复都会被拒（6002 / 6005 / 6006），只有读取与导出放行。"},
+    {"@type": "HowToStep", "name": "导出源数据", "text": "从原管理器导出 1PUX、OPVault、Bitwarden JSON 或 CSV；macOS 密码 App 走导出的 CSV。"},
+    {"@type": "HowToStep", "name": "按格式导入", "text": "菜单「数据」或工具栏「导入」选择格式，CSV 是 ⌘I，1PUX 是 ⌘⇧I。"},
+    {"@type": "HowToStep", "name": "读预检报告", "text": "预检会列出总条目、可导入、未导入项及原因，看完再点执行。"},
+    {"@type": "HowToStep", "name": "核对条目数与抽查登录", "text": "结果页的新建条数应等于预检页的可导入条数；再抽两三条真实登录一次。"},
+    {"@type": "HowToStep", "name": "备份并准备回滚", "text": "用合成数据演练一次加密备份与恢复，并想清楚失败时走库级、备份级还是条目级回滚。"}
   ]
 }
 </script>
@@ -38,69 +39,130 @@
 <header class="wrap nav"><a class="brand" href="../index.html" aria-label="Bitcoffer 首页">bitcoffer<span>.</span></a><nav class="navlinks" aria-label="主导航"><a class="optional" href="../index.html#how">工作方式</a><a href="../index.html#license">许可</a><a class="optional" href="../privacy.html">隐私</a><a class="pill" href="https://github.com/cygnusyang/bitcoffer-releases">下载</a></nav></header>
 <main class="prose" id="main">
 <p class="kicker">指南 · 迁入</p>
-<h1>迁入与恢复：先把「能还原」证明出来</h1>
-<p class="dek">换密码管理器的风险不在导入，而在你以为备份能用、其实不能用。这份指南的顺序是：先用合成数据把备份与恢复整条链路走通，再搬真实凭据。</p>
-<p class="meta">2026-11-08 更新 · 作者 cygnus（Bitcoffer 开发者）</p>
+<h1>迁入与回滚：先确认门开着，再证明能还原</h1>
+<p class="dek">换密码管理器的风险有两层：一层是导入时少了几条，另一层是你以为备份能用、其实不能用。正确的顺序是：先确认应用不是只读态，再导出、导入、核对，最后用合成数据证明备份真能还原。</p>
+<p class="meta">2026-11-09 更新 · 作者 cygnus（Bitcoffer 开发者）</p>
+
+<h2>零、动手前：先确认不是只读态</h2>
+<p>迁移的第一道门不是文件格式，是许可状态。Bitcoffer 对写入操作设了门禁，导入与恢复都在门禁里：状态不对时它们会被直接拒绝，界面表现不是「导入失败」，而是「不许写」。</p>
+<table>
+<thead><tr><th>状态</th><th>导入</th><th>恢复备份</th><th>读取与导出</th><th>拒绝码</th></tr></thead>
+<tbody>
+<tr><td>已激活，或试用期未结束</td><td>可以</td><td>可以</td><td>可以</td><td>—</td></tr>
+<tr><td>试用到期</td><td>被拒</td><td>被拒</td><td>可以</td><td>6002</td></tr>
+<tr><td>订阅到期</td><td>被拒</td><td>被拒</td><td>可以</td><td>6005</td></tr>
+<tr><td>已撤销</td><td>被拒</td><td>被拒</td><td>可以</td><td>6006</td></tr>
+<tr><td>许可状态读取失败</td><td>被拒</td><td>被拒</td><td>可以</td><td>6003</td></tr>
+</tbody></table>
+<p>这里有一条容易被讲错的纪律。<strong>「先备份再动手」并不足以保底</strong>：回滚本身也是写操作——删掉试点库是库级写、从备份恢复属于导入恢复组、把导入的条目丢进回收站是条目写——只读态下三条路一起失效。唯一仍被放行的是导出，所以顺序必须是：<strong>先确认不是只读态 → 再备份 → 再动手</strong>。</p>
+<div class="callout"><span class="label">先记住一件事</span>
+<p>只读态不等于不能用：查看、搜索、复制、导出加密备份都照常。被锁住的只有写——包括迁移和回滚。哪个状态下算只读，以 App 内许可页的显示为准 ⚠。</p></div>
 
 <h2>一、Bitcoffer 支持哪些来源</h2>
-<p>导入按文件格式处理，而不是按品牌。当前支持四条路径：</p>
+<p>导入按文件格式处理，而不是按品牌。当前是五条路径：</p>
 <table>
 <thead><tr><th>来源</th><th>文件格式</th><th>说明</th></tr></thead>
 <tbody>
-<tr><td>1Password</td><td><code>.1pux</code></td><td>含附件。Passkey 不随 1PUX 导出，需要走加密备份迁移。</td></tr>
-<tr><td>1Password（旧版）</td><td>OPVault</td><td>老版本目录格式，按目录整体选择。</td></tr>
-<tr><td>Bitwarden</td><td>JSON 导出</td><td>凭据在 <code>login_*</code> 字段里，会映射到对应列。</td></tr>
-<tr><td>通用</td><td>CSV</td><td>自身导出为 9 列；对 Bitwarden / LastPass 的导出另有列名映射（profile）。</td></tr>
+<tr><td>1Password</td><td><code>.1pux</code></td><td>官方导出格式，ZIP 归档，含附件。桌面端导出不含 passkey 字段；即便经其它路径带入，<strong>Bitcoffer 内 passkey 也不能创建、不能使用</strong>（降级：仅导入/查看/删除）。</td></tr>
+<tr><td>1Password（旧版）</td><td>OPVault 目录</td><td>老版本 vault 格式，按目录整体选择；导入时要输 1Password 主密码；附件会跳过并计数。</td></tr>
+<tr><td>Bitwarden</td><td>未加密的 <code>.json</code></td><td>独立解析链，读密码 / 备注 / 自定义字段与 <code>fido2Credentials</code>；passkey 只有 ES256 行可导入，私钥为加密形态的行会跳过并在预检里逐条列出原因。<strong>迁入后的 passkey 是降级读面：只能导入、查看、删除，不能创建、不能使用</strong>。带密码保护的导出当前不支持。</td></tr>
+<tr><td>Apple 密码（系统「密码」App）</td><td>它导出的 CSV，放进指定目录</td><td>菜单里叫「从 macOS 密码 App…」。选一个放置区目录并授权，之后在密码 App 里「文件」→「导出所有密码」存到该目录，Bitcoffer 自动检测、按库内去重、逐行可勾选。</td></tr>
+<tr><td>通用</td><td>CSV</td><td>自身导出为 9 列；也能认 1Password 9 列、Chrome / Edge / Safari / 1Password 8 / Bitwarden / LastPass 的常见列名和中文表头。</td></tr>
 </tbody></table>
-<p>其余厂商（Firefox、KeePassXC、Dashlane、NordPass 等）没有专门的样本与实测，不做承诺。它们的导出如果能落成上面任何一种格式，就按那种格式走。</p>
-
-<div class="callout"><span class="label">先记住一件事</span>
-<p>导入与恢复都是写入操作，需要已激活的完整权限。未激活或试用到期时应用处于只读态，这两条路径会被直接拒绝——不是失败，是门禁。</p></div>
+<p><code>.env</code> 没有文件导入入口：它是「变量名 = 值」的形态，不是条目。要搬就按变量写进环境容器，用 CLI 的 <code>set-env</code>，值从终端隐藏输入，不落命令行、不进进程列表、不进日志。</p>
+<p>其余厂商（Firefox、KeePassXC、Dashlane、NordPass 等）没有专门的样本与实测，不做承诺。它们的导出如果能落成上面任何一种格式，就按那种格式走。KeePass 的 KDBX 当前没有导入入口。</p>
 
 <h2>二、导出：先把明文拿到手，再谈导入</h2>
-<p>导出文件是明文。落在哪里、什么时候删，属于这次迁移里最容易被忽略的一步。</p>
+<p>导出文件是明文的。落在哪里、什么时候删，是这次迁移里最容易被忽略的一步。</p>
 <ul>
 <li>导出到一个你结束后会删掉的位置，不要直接扔进 iCloud Drive 或「下载」目录长期留着。</li>
 <li>导出前确认文件大小合理：一个几千条的库导出成 3 KB，说明导出本身没成功。</li>
-<li>1Password 用户：先想清楚要不要迁 Passkey。要迁，就不要只带 1PUX。</li>
+<li>导出后先复制一份留档，迁移确认无误之前不删原件。</li>
+<li>1Password 用户：先想清楚要不要迁 passkey。要迁，就不要只带 1PUX——passkey 不随 1PUX 走，只随加密备份走；<strong>且迁入后仍不能创建、不能使用</strong>（仅导入/查看/删除）。</li>
+<li>Bitcoffer 自己导出时：加密备份是整库归档；CSV 与 1PUX 都是明文、都要过「我已知晓风险」勾选加二次确认；1PUX 导出不包含回收站条目，也不包含 passkey。</li>
 </ul>
 
-<h2>三、导入：第一次只搬一小撮</h2>
-<ol>
-<li>选「导入」，按格式选择文件。CSV 需要指定列映射（或选择对应厂商的 profile）。</li>
-<li>预检会在真正写入前跑一遍，列出将被跳过的行与原因：缺标题、缺密码、重复条目、行数不齐。</li>
-<li><strong>先读完预检报告再点执行。</strong>这一步的价值是把「导入了一部分」变成「知道哪部分没进来、为什么」。</li>
-<li>第一批只导入 5–10 条非关键凭据。检查字段是否落到了正确的位置：用户名、密码、网址、备注、TOTP。</li>
-<li>确认映射正确后，再导入全量。</li>
-</ol>
+<h2>三、导入：先弄清哪些路径能「只搬一部分」</h2>
+<p>入口有两处，同源：菜单「数据」→ 对应格式项，或工具栏「导入」菜单。快捷键只有两个——导入 CSV 是 ⌘I，导入 1Password (.1pux) 是 ⌘⇧I；Bitwarden 与 OPVault 没有快捷键。</p>
+<p>「第一次只搬一小撮」这句话要看格式：<strong>四个导入向导（CSV / 1PUX / Bitwarden / OPVault）都没有条目勾选，预检页点下去就是全量</strong>；能逐行挑的只有「从 macOS 密码 App」那条放置区路径——它把每一行按新增 / 重复 / 冲突分类列出来，逐行可切换，按钮上的数字跟着变，重复项默认跳过、也可一键全部导入。所以想降低首次风险，实际可用的做法是：<strong>先迁一个条目少的库或项目，或者迁进一个专用试点库</strong>，而不是在向导里挑挑拣拣。</p>
+<p>失败会怎么收拾，取决于格式的事务语义——这一点决定了中断后要不要重来：</p>
+<table>
+<thead><tr><th>格式</th><th>事务语义</th><th>中途失败会怎样</th></tr></thead>
+<tbody>
+<tr><td>CSV / OPVault</td><td>单事务，全或无</td><td>一条都不落库，修好文件重来即可</td></tr>
+<tr><td>1PUX / Bitwarden</td><td>每条目独立事务</td><td>已完成的条目保留；直接重试会重复新建，库里的条目数可能变成 1–2 倍</td></tr>
+<tr><td>放置区（Apple 密码 CSV）</td><td>单事务</td><td>失败零落库</td></tr>
+</tbody></table>
+<p>预检页各给什么，也值得提前知道：1PUX 给出总条目 / 可导入 / 附件数，并逐条列出未导入项；CSV 给出可导入条数、缺标题行与未识别列的清单；OPVault 的结构预检只校验目录结构与 profile 元数据，密码对不对要到导入时才见分晓，按钮写「开始导入」，所以它给不出条目数。</p>
+<p>1Password 与 Bitwarden 各自导出向导里的菜单层级随对方版本变化，这里只承诺格式与文件名 ⚠。</p>
 
-<h2>四、校验：条目数要能对上</h2>
+<h2>四、校验：条目数要能对上，登录也要真登一次</h2>
 <p>导入完成后不核对数量，等于把「大概齐」当成迁移完成。三个数字应该能互相解释：</p>
 <ul>
-<li>源文件里的条目数；</li>
-<li>预检报告里的「将导入 / 将跳过」；</li>
-<li>导入后库里的条目数。</li>
+<li>源端的条目数；</li>
+<li>预检页的「可导入」与「未导入 N 条」；</li>
+<li>结果页写的「导入完成：新建 N 条条目」。</li>
 </ul>
-<p>差多少、差在哪一类，要有答案。常见差额来源是空条目、重复条目、以及只有备注没有密码的笔记型条目——它们本来就该被跳过。</p>
+<p>差多少、差在哪一类，要有答案。1PUX 的预检会单独列出三行条件计数——「回收站 N 条」「丢弃密码历史 N 条」「检测到 Passkey N 个」——出现就说明有东西没搬全，这是披露，不是报错。CSV 还有一层：认不出的列名不会丢数据，值会以「[未映射列 &lt;列名&gt;]」的形式并入备注，所以核对时顺手看一眼备注有没有异常长的一段。</p>
+<p>数量对得上还不算完，再抽查 2–3 条，其中一条带 TOTP：</p>
+<table>
+<thead><tr><th>抽查动作</th><th>操作</th></tr></thead>
+<tbody>
+<tr><td>对密码</td><td>选中条目按 ⏎ 或 ⌘⇧C 复制密码，粘到对应站点真登一次</td></tr>
+<tr><td>对 TOTP</td><td>按 ⌥⇧C 复制验证码，确认目标站点接受</td></tr>
+<tr><td>对用户名 / 网址</td><td>详情页逐字段比对，重点看带特殊字符的密码有没有被截断</td></tr>
+</tbody></table>
+<p>1PUX 的结果页还会随机抽几条标题与类别供对照（抽样条数以当前版本为准 ⚠），但不会展示密码与正文，真正的核对还是要回主列表。</p>
 
-<h2>五、备份与恢复：用合成数据演练一次</h2>
+<h2>五、备份、恢复与回滚：先证明能还原</h2>
 <p>顺序很重要，别用真实凭据做第一次恢复测试。</p>
 <ol>
-<li>建一个临时库，塞 3–5 条合成凭据（<code>test-01</code> 之类，密码随便但格式真实）。</li>
-<li>做一次加密备份，记下文件路径与时间。</li>
+<li>建一个临时库（文件菜单「新建密码库…」），塞 3–5 条合成凭据（<code>test-01</code> 之类，密码随便但格式真实）。</li>
+<li>做一次加密备份（⌘E，或菜单「数据」→「导出…」→ 加密备份），记下文件路径与时间。</li>
 <li>把临时库删掉或移到别处，模拟最坏情况。</li>
-<li>用备份恢复，确认条目、字段、TOTP、附件都回来了。</li>
+<li>用备份恢复（设置 → 数据 →「从备份恢复…」，还没有库时首屏就有该入口），确认条目、字段、TOTP、附件都回来了。</li>
 <li>只有第 4 步通过，再对真实库做第一次备份。</li>
 </ol>
-<p>Passkey 不随 1PUX 走，但会随加密备份走——这正是「备份不是可选项」的原因。备份文件本身是加密的，把它当密钥材料对待：放离线介质或你信任的加密存储，别和主密码放在一起。</p>
+<p><strong>硬约束：Bitcoffer 的 passkey 是降级版——只能导入、查看、删除，不能创建、不能使用</strong>（见 <code>FEATURES.zh.md</code> 降级读面）。passkey 不随 1PUX 走，但会随加密备份走——这正是「备份不是可选项」的原因；迁完也不等于能拿它登录网站。备份文件本身是加密的，把它当密钥材料对待：放离线介质或你信任的加密存储，别和主密码放在一起。</p>
+
+<h3>真失败了，从三档里挑一档回滚</h3>
+<table>
+<thead><tr><th>级别</th><th>怎么做</th><th>代价</th></tr></thead>
+<tbody>
+<tr><td>库级（最干净）</td><td>迁移前先建一个专用试点库，整个导入只在它里面做；不满意就 设置 → 数据 →「管理密码库…」删掉它。删除向导会先要求导出一份该库的加密备份。</td><td>主库全程没被碰过；删库不可逆</td></tr>
+<tr><td>备份级</td><td>设置 → 数据 →「从备份恢复…」→ 选 <code>.bitcoffer</code> → 校验 → 恢复 → 用该库主密码解锁。</td><td>回到备份那一刻，此后的改动丢失</td></tr>
+<tr><td>条目级</td><td>导入只会「新建」，不会覆盖库里已有条目，所以逐条「移到回收站」（⌘⌫）就等于撤销这次导入；回收站支持还原或彻底删除。</td><td>删除是单条目操作，条数多会很慢</td></tr>
+</tbody></table>
+<p>三档都是写操作，所以第零节那条前置检查不是客套：只读态下它们一起失效，届时唯一还能做的是导出。</p>
 
 <h2>六、迁完之后</h2>
 <ul>
-<li>删除导出文件，清空废纸篓。</li>
-<li>在原管理器里保留只读一段时间，确认没有遗漏的自动填充项依赖它。</li>
+<li>删掉导出文件，清空废纸篓。CSV 是明文，删除时机比 1PUX 更紧。</li>
+<li>在原管理器里保留一段时间，确认没有遗漏的自动填充项依赖它。Bitcoffer 没有浏览器扩展，日常取用靠复制粘贴与 ⌘⇧C / ⌘U / ⌥⇧C。</li>
 <li>把主密码与恢复码分开存放，恢复码只在你丢失主密码时使用。</li>
 <li>需要脚本或 AI 客户端取用凭据时，走明确的授权与注入路径，不要让它们读备份文件。</li>
+<li>哪天想搬回 1Password：导出按官方 1PUX v3 结构生成，但 1Password 没有对应类别的条目会被落成安全笔记——字段值与备注保留，类别语义丢失，导出报告不会提示。</li>
 </ul>
+
+<h3>依据</h3>
+<ol>
+<li>支持格式、各格式边界与「导入恒为新建」：内部源码 <code>core/cf-importer/src/lib.rs</code></li>
+<li>「数据」菜单五个导入入口与导出入口、⌘I / ⌘⇧I / ⌘E / ⌘⌫：<code>macos/Bitcoffer/BitcofferApp.swift</code></li>
+<li>四格式事务语义与重试重复新建提示：<code>macos/Bitcoffer/Views/ImportWizardShell.swift</code></li>
+<li>放置区流程、逐行勾选与去重分类：<code>macos/Bitcoffer/Views/DropzoneImportView.swift</code></li>
+<li>预检统计、抽样核对、删源建议：<code>macos/Bitcoffer/Views/PuxImportView.swift</code></li>
+<li>CSV 9 列映射、表头别名、未映射列并入备注：<code>core/cf-importer/src/csv/mapping.rs</code></li>
+<li>CSV 上限（50 MB / 10 000 行 / 64 KiB 字段 / 64 列）与编码回退：<code>core/cf-importer/src/csv/parser.rs</code></li>
+<li>导入与恢复的许可门禁组：<code>core/cf-ffi/src/api.rs</code>、<code>core/cf-session/src/vault.rs</code></li>
+<li>到期 / 撤销状态拒写、读与导出放行的口径：<code>core/cf-ffi/src/official.rs</code></li>
+<li>6002 / 6003 / 6005 / 6006 的编号：<code>core/cf-domain/src/error.rs</code></li>
+<li>导出三入口、明文双重确认、删库向导强制先备份：<code>macos/Bitcoffer/Views/ExportView.swift</code></li>
+<li>设置 → 数据各入口、文件菜单「新建密码库…」：<code>macos/Bitcoffer/Views/SettingsView.swift</code>、<code>macos/Bitcoffer/Views/VaultSwitcherView.swift</code></li>
+<li>App 内入口、快捷键、恢复路径与「密码保护导出不支持」：<code>macos/Bitcoffer/Views/HelpCenterContent.swift</code></li>
+<li>1PUX 导出结构与降级行为：<code>core/cf-exporter/src/pux.rs</code>、<code>CHANGELOG.md</code></li>
+<li>桌面 1PUX 不含 passkey 字段：<code>core/cf-importer/src/pux/passkey.rs</code></li>
+</ol>
+<p>以上入口名称与路径以 App 当前版本为准；标 ⚠ 的项未经真机实测，遇到显示不一致时，以应用内实际界面为准。上述源码文件位于内部仓库，改动随版本推进，核对时请以对应版本的代码为准。</p>
 
 <div class="cta"><strong>Bitcoffer 是本地优先的 macOS 密码管理器。</strong>
 <p>密码、密钥与凭据只存在你的 Mac 上：无云同步、无账号、无遥测，唯一的出站请求是更新检查。</p>
