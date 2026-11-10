@@ -13,3 +13,7 @@
 # 无扩展名的友好入口
 /kaidoplan  /kaidoplan/  301
 /bitcoffer  /bitcoffer/  301
+
+# 旧英文产品页入口（默认语言改为 /bitcoffer/ 后）
+/bitcoffer/en       /bitcoffer/  301
+/bitcoffer/en.html  /bitcoffer/  301

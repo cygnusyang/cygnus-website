@@ -101,7 +101,7 @@ def bitcoffer(lang: str) -> dict:
         "applicationCategory": "SecurityApplication",
         "applicationSubCategory": "Password manager",
         "operatingSystem": "macOS",
-        "url": f"{BASE}/bitcoffer/en" if en else f"{BASE}/bitcoffer/",
+        "url": f"{BASE}/bitcoffer/" if en else f"{BASE}/bitcoffer/zh",
         "description": (
             "A local-first password and credential manager: encrypted on-device vault, Touch ID "
             "unlock, and an MCP server that hands secrets to agents without revealing the values."
@@ -138,10 +138,11 @@ PAGES = {
     "kaidoplan/privacy.html": dict(url=f"{BASE}/kaidoplan/privacy", locale="zh_Hans", canonical_only=True),
     "kaidoplan/terms.html": dict(url=f"{BASE}/kaidoplan/terms", locale="zh_Hans", canonical_only=True),
     "kaidoplan/refund.html": dict(url=f"{BASE}/kaidoplan/refund", locale="zh_Hans", canonical_only=True),
-    "bitcoffer/index.html": dict(url=f"{BASE}/bitcoffer/", locale="zh_Hans", image="/bitcoffer/assets/lock.png",
-                                 ld=[bitcoffer("zh")], alt=("en", "/bitcoffer/en")),
-    "bitcoffer/en.html": dict(url=f"{BASE}/bitcoffer/en", locale="en", image="/bitcoffer/assets/lock.png",
-                              ld=[bitcoffer("en")], alt=("zh_Hans", "/bitcoffer/")),
+    "bitcoffer/index.html": dict(url=f"{BASE}/bitcoffer/", locale="en", image="/bitcoffer/assets/lock.png",
+                                 ld=[bitcoffer("en")], alt=("zh_Hans", "/bitcoffer/zh")),
+    "bitcoffer/zh.html": dict(url=f"{BASE}/bitcoffer/zh", locale="zh_Hans", image="/bitcoffer/assets/lock.png",
+                              ld=[bitcoffer("zh")], alt=("en", "/bitcoffer/")),
+    "bitcoffer/en.html": dict(url=f"{BASE}/bitcoffer/", locale="en", canonical_only=True),
 }
 
 

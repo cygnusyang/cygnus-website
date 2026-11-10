@@ -101,8 +101,8 @@ Or download the latest build: https://github.com/cygnusyang/bitcoffer-releases/r
 
 ### 3.5 Pages
 
-- Product (Chinese): https://ai.cygnusyang.top/bitcoffer/
-- Product (English): https://ai.cygnusyang.top/bitcoffer/en
+- Product (English): https://ai.cygnusyang.top/bitcoffer/
+- Product (Chinese): https://ai.cygnusyang.top/bitcoffer/zh
 - Privacy: https://ai.cygnusyang.top/bitcoffer/privacy
 - Public source and release repositories: https://github.com/cygnusyang/bitcoffer and https://github.com/cygnusyang/bitcoffer-releases
 
@@ -126,8 +126,8 @@ Every URL below is a no-extension, directly reachable page.
 | KaidoPlan privacy | https://ai.cygnusyang.top/kaidoplan/privacy |
 | KaidoPlan terms | https://ai.cygnusyang.top/kaidoplan/terms |
 | KaidoPlan refunds | https://ai.cygnusyang.top/kaidoplan/refund |
-| Bitcoffer (Chinese) | https://ai.cygnusyang.top/bitcoffer/ |
-| Bitcoffer (English) | https://ai.cygnusyang.top/bitcoffer/en |
+| Bitcoffer (English) | https://ai.cygnusyang.top/bitcoffer/ |
+| Bitcoffer (Chinese) | https://ai.cygnusyang.top/bitcoffer/zh |
 | Bitcoffer privacy | https://ai.cygnusyang.top/bitcoffer/privacy |
 
 ---
