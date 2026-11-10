@@ -2,7 +2,7 @@
 
 > Independent macOS software by cygnus (https://github.com/cygnusyang). We make productivity tools that turn what AI can describe into work that actually gets done. This is a fact sheet, not marketing copy: it records only claims verifiable in the apps, their public repositories and the pages indexed in §4. Pricing below describes the direct-download channel; the Mac App Store builds are still in review.
 
-Last updated 2026-11-06. No promises for features that have not shipped.
+Last updated 2026-11-10. No promises for features that have not shipped.
 
 ---
 
@@ -48,7 +48,7 @@ AI agents (Claude Code, Codex and similar) work task by task. The plan itself �
 - The trial **downgrades** to the free tier when it ends; the app does not stop working and nothing already built is locked, exported off the machine or deleted. This is a downgrade, not a switch-off.
 - The two things that end with the trial are AI write access and unlimited exports.
 - KaidoPlan direct-download purchases carry a **14-day no-questions-asked refund**: https://ai.cygnusyang.top/refund
-- Checkout for direct downloads is handled by **Paddle.com Market Ltd** as Merchant of Record: https://ai.cygnusyang.top/pricing
+- Checkout for KaidoPlan direct downloads is handled by **Paddle.com Market Ltd** as Merchant of Record: https://ai.cygnusyang.top/pricing
 
 ### 2.6 Install
 
@@ -88,8 +88,8 @@ Passwords, API keys and other credentials need to be usable by people and by AI 
 ### 3.3 Commercial model
 
 - **$9.99 USD per year**.
-- Live terms are at https://ai.cygnusyang.top/pricing.
-- Checkout for direct downloads is handled by Paddle.com Market Ltd as Merchant of Record. Policy pages: https://ai.cygnusyang.top/refund · https://ai.cygnusyang.top/terms
+- There is no online checkout. Download the macOS build and activate it with a serial licence; purchase and licensing inquiries: ruohuyang@163.com.
+- Live terms are at https://ai.cygnusyang.top/pricing. Policy pages: https://ai.cygnusyang.top/refund · https://ai.cygnusyang.top/terms
 
 ### 3.4 Install
 
@@ -148,8 +148,8 @@ Every URL below is a no-extension, directly reachable page.
 | KaidoPlan refund | 14-day no-questions-asked on direct-download purchases |
 | Bitcoffer architecture | encrypted on-device vault, Touch ID, App Sandbox, no cloud sync / account / telemetry |
 | Bitcoffer MCP | local MCP server; secret values are not returned to the model |
-| Bitcoffer price | $9.99 USD per year |
-| Checkout (direct downloads) | Paddle.com Market Ltd as Merchant of Record |
+| Bitcoffer price | $9.99 USD per year; no online checkout — download and activate with a serial licence; inquiries: ruohuyang@163.com |
+| KaidoPlan checkout (direct download) | Paddle.com Market Ltd as Merchant of Record |
 | Mac App Store builds | in review; no availability claim made here |
 | Contact | ruohuyang@163.com |
 
