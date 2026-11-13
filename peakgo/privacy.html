@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="峰行 PeakGo 隐私政策：传感器读数全部在本机计算，不收集任何个人数据，无账号、无云同步、无广告、无第三方统计 SDK。">
+<title>峰行 PeakGo — 隐私政策 / Privacy Policy</title>
+<link rel="canonical" href="https://ai.cygnusyang.top/peakgo/privacy">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0 auto; max-width: 760px; padding: 48px 24px 96px;
+         font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", sans-serif; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin-top: 40px; }
+  h3 { font-size: 17px; margin-top: 24px; }
+  .meta { color: #888; font-size: 14px; margin-bottom: 28px; }
+  .lede { border-left: 3px solid rgba(127,127,127,.45); padding: 2px 0 2px 16px; margin: 24px 0; }
+  code { font-size: 14px; background: rgba(127,127,127,.15); padding: 1px 5px; border-radius: 3px; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: #0b6b5a; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 16px 0; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid rgba(127,127,127,.25); vertical-align: top; }
+  th { font-weight: 600; }
+  hr { border: 0; border-top: 1px solid rgba(127,127,127,.3); margin: 56px 0; }
+  .nav { font-size: 15px; margin-bottom: 32px; }
+  .nav a { margin-right: 16px; }
+</style>
+<script src="../theme.js"></script>
+</head>
+<body>
+
+<div class="nav">
+  <a href="./">产品</a><a href="./privacy">隐私政策</a><a href="./terms">使用条款</a><a href="./support">支持</a>
+</div>
+
+<h1>峰行 PeakGo 隐私政策</h1>
+<p class="meta">最后更新：2026-11-13 · 适用版本 1.0 及以后 · 适用平台：iOS</p>
+
+<p class="lede"><strong>一句话</strong>：峰行（PeakGo）不收集任何个人数据。海拔、气压、方向、经纬度全部由本机传感器取得并在本机计算，不上传服务器。<strong>没有账号、没有云同步、没有广告、没有第三方统计 SDK、没有追踪。</strong></p>
+
+<h2>1 · 我们不收集什么</h2>
+<table>
+  <tr><th>项目</th><th>说明</th></tr>
+  <tr><td>没有账号</td><td>产品内没有注册、没有登录、不要求邮箱或手机号，不生成用户 ID</td></tr>
+  <tr><td>没有云同步</td><td>设置、校准数据与历史趋势只存在本机；没有服务器侧副本</td></tr>
+  <tr><td>没有广告与追踪</td><td>不集成任何广告 SDK，不做跨 App 或跨网站追踪，不申请 ATT 追踪授权</td></tr>
+  <tr><td>没有第三方统计</td><td>不集成分析、归因、热力、AB 测试等任何第三方 SDK；运行时零第三方依赖</td></tr>
+  <tr><td>不读取通讯录、健康数据、剪贴板、麦克风</td><td>这些权限从未申请，代码中也没有对应调用</td></tr>
+  <tr><td>不做画像与自动化决策</td><td>不对你进行用户画像、不基于数据做自动化决策</td></tr>
+</table>
+
+<h2>2 · 权限及其用途</h2>
+<p>下列权限全部<strong>只在本机使用</strong>，用途单一，数据不离开设备。拒绝任一权限时，其余功能仍可正常使用。</p>
+<table>
+  <tr><th>权限</th><th>系统提示中的名称</th><th>用途</th><th>数据去向</th></tr>
+  <tr><td>定位</td><td>使用 App 期间</td><td>测算海拔、经纬度与真北方位（GPS 与气压融合）</td><td>仅在本机内存与本地缓存中处理，不上传</td></tr>
+  <tr><td>相机</td><td>相机</td><td>拍摄带海拔水印的照片</td><td>照片只写入你的本机相册，不经本 App 上传</td></tr>
+  <tr><td>照片</td><td>添加照片</td><td>把水印照片保存到相册（仅添加权限，不读取你的相册内容）</td><td>同上，仅本机</td></tr>
+  <tr><td>运动与健身</td><td>运动与健身</td><td>读取气压计与高度计数据、指南针倾斜补偿</td><td>仅在本机计算，不上传</td></tr>
+</table>
+<p>App 不申请后台定位、不使用持续定位、不采集任何位置轨迹，也不存在“位置历史”这类数据。</p>
+
+<h2>3 · 订阅与支付</h2>
+<ul>
+  <li>订阅由 <strong>App Store（Apple）</strong>处理。我们<strong>不会</strong>收到你的姓名、支付卡号、账单地址或 Apple ID 邮箱。</li>
+  <li>App 通过系统的 StoreKit 框架向 App Store 查询商品信息与校验购买凭证；这些请求由 Apple 的系统组件完成，我们无法从中获知你的身份。</li>
+  <li>我们仅在本机读取一条结论性状态：<em>当前是否持有有效订阅</em>。该状态由系统提供，不包含任何个人信息。</li>
+  <li>退款、取消订阅、查看购买记录均由 Apple 处理，请通过 <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a> 或系统「设置 → Apple ID → 订阅」操作。</li>
+  <li>订阅相关的处理受 <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a>约束。</li>
+</ul>
+
+<h2>4 · 网络访问</h2>
+<p>App 自身不包含任何自有网络请求，没有自建服务器，没有上传接口，也没有远程配置下发。唯一的联网行为来自系统组件的订阅流程（见上一节），以及 Apple 提供的系统级服务（如 App 更新、崩溃收集）。</p>
+<p>若你在 iOS「设置 → 隐私与安全性 → 分析与改进」中开启了与开发者共享，Apple 可能向我们提供<strong>匿名且聚合</strong>的崩溃报告与使用统计。该数据由 Apple 收集与控制，App 内没有安装任何采集代码，我们也无法据此识别任何个人。你可以随时在系统设置中关闭共享。</p>
+
+<h2>5 · 数据保留与删除</h2>
+<ul>
+  <li>设置项（单位、语言、主题、校准基准值）与气压／海拔历史趋势保存在本机 App 沙盒内。</li>
+  <li>卸载 App 即随之删除，我们不保留副本，也无法远程删除或恢复。</li>
+  <li>由于不存在服务器侧数据，<strong>不存在需要行使“删除权”的远端数据</strong>。</li>
+</ul>
+
+<h2>6 · 儿童</h2>
+<p>本 App 不含广告、不含内购以外的付费点、不收集任何数据，各年龄段均可使用。我们不会有意收集儿童（含 14 周岁以下未成年人）的个人信息；事实上我们不收集任何人的个人信息。</p>
+
+<h2>7 · 你的权利</h2>
+<p>依据《中华人民共和国个人信息保护法》、欧盟 GDPR、美国 CCPA/CPRA 等适用法律，你享有知情、访问、更正、删除、撤回同意、可携带等权利。由于本 App 不收集个人信息、不进行个人信息出境、不做自动化决策，上述权利在事实上不存在对应的数据处理活动。若你仍有疑问或投诉，可通过下方邮箱联系我们，我们会在 15 个工作日内答复。</p>
+
+<h2>8 · 第三方链接</h2>
+<p>App 内的「使用条款」链接指向 Apple 的标准最终用户许可协议，「隐私政策」链接指回本页面。除此之外不跳转任何第三方站点。跳转后，对方站点的数据处理由其自身政策约束。</p>
+
+<h2>9 · 政策变更</h2>
+<p>若未来版本引入需要联网或涉及数据处理的功能（例如可选的云端备份），我们会在功能上线前更新本政策，并在 App 内以显著方式提示。每次更新都会修改本页顶部的“最后更新”日期；重大变更会在 App 内二次确认后才启用。</p>
+
+<h2>10 · 联系方式</h2>
+<p>开发者：杨若鹄（个人开发者）<br>
+邮箱：<a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a><br>
+支持页面：<a href="./support">ai.cygnusyang.top/peakgo/support</a></p>
+
+<hr>
+
+<div lang="en">
+<h1>PeakGo Privacy Policy</h1>
+<p class="meta">Last updated: 13 November 2026 · Applies to version 1.0 and later · Platform: iOS</p>
+
+<p class="lede"><strong>In one sentence</strong>: PeakGo collects no personal data. Altitude, pressure, heading and coordinates are read from on-device sensors and computed on device, never uploaded. <strong>No account, no cloud sync, no ads, no third-party analytics SDK, no tracking.</strong></p>
+
+<h2>1 · What we do not collect</h2>
+<table>
+  <tr><th>Item</th><th>Detail</th></tr>
+  <tr><td>No account</td><td>No sign-up, no login, no email or phone number, no user ID</td></tr>
+  <tr><td>No cloud sync</td><td>Settings, calibration values and history stay on your device; no server-side copy exists</td></tr>
+  <tr><td>No ads or tracking</td><td>No advertising SDK, no cross-app or cross-site tracking, no App Tracking Transparency prompt</td></tr>
+  <tr><td>No third-party analytics</td><td>No analytics, attribution, heat-map or A/B SDK; zero third-party runtime dependencies</td></tr>
+  <tr><td>No contacts, health, clipboard or microphone access</td><td>These permissions are never requested and no such API is called</td></tr>
+  <tr><td>No profiling</td><td>We do not build user profiles or make automated decisions about you</td></tr>
+</table>
+
+<h2>2 · Permissions and their purpose</h2>
+<p>Every permission below is used <strong>on device only</strong> for the single stated purpose. Declining any of them leaves the rest of the app usable.</p>
+<table>
+  <tr><th>Permission</th><th>Prompt name</th><th>Purpose</th><th>Where data goes</th></tr>
+  <tr><td>Location</td><td>While Using the App</td><td>Altitude, coordinates and true-north bearing (GPS fused with barometer)</td><td>Processed in memory and local cache only; never uploaded</td></tr>
+  <tr><td>Camera</td><td>Camera</td><td>Capture photos with an altitude watermark</td><td>Written to your photo library only; never uploaded by the app</td></tr>
+  <tr><td>Photos</td><td>Add to Photos</td><td>Save watermarked photos (add-only; your library is not read)</td><td>Same as above, on device only</td></tr>
+  <tr><td>Motion &amp; Fitness</td><td>Motion &amp; Fitness</td><td>Read barometer and altimeter data, plus compass tilt compensation</td><td>Computed on device only</td></tr>
+</table>
+<p>The app does not request background location, does not track your location over time, and keeps no location history.</p>
+
+<h2>3 · Subscriptions and payment</h2>
+<ul>
+  <li>Subscriptions are handled by the <strong>App Store (Apple)</strong>. We do <strong>not</strong> receive your name, card number, billing address or Apple ID email.</li>
+  <li>The app uses Apple's StoreKit framework to load product information and verify purchase receipts. These requests are made by Apple's system components; we cannot identify you from them.</li>
+  <li>We only read one on-device conclusion: <em>whether a valid subscription is currently active</em>. That status contains no personal information.</li>
+  <li>Refunds, cancellation and purchase history are handled by Apple at <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a> or in Settings → Apple ID → Subscriptions.</li>
+  <li>Subscription processing is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
+</ul>
+
+<h2>4 · Network access</h2>
+<p>The app contains no network code of its own: no backend, no upload endpoint, no remote configuration. The only network activity comes from Apple's system components for the subscription flow described above, and from system services such as app updates and crash reporting.</p>
+<p>If you enable sharing in iOS Settings → Privacy &amp; Security → Analytics &amp; Improvements, Apple may provide us with <strong>anonymous, aggregated</strong> crash reports and usage statistics. That data is collected and controlled by Apple; no collection code ships in the app and we cannot identify any individual from it. You can turn sharing off at any time.</p>
+
+<h2>5 · Retention and deletion</h2>
+<ul>
+  <li>Preferences (units, language, theme, calibration baseline) and pressure/altitude history are stored in the app's local sandbox.</li>
+  <li>Deleting the app deletes them. We keep no copy and cannot restore or remove them remotely.</li>
+  <li>Because no server-side data exists, there is <strong>no remote data on which a deletion request could operate</strong>.</li>
+</ul>
+
+<h2>6 · Children</h2>
+<p>The app has no ads, no paid content beyond the optional subscription, and collects no data, so it is suitable for all ages. We do not knowingly collect personal information from children; in fact we collect no one's personal information.</p>
+
+<h2>7 · Your rights</h2>
+<p>Under the EU GDPR, the CCPA/CPRA, China's Personal Information Protection Law and other applicable laws you have rights of access, correction, deletion, withdrawal of consent and portability. Because the app collects no personal information, transfers none across borders and makes no automated decisions, these rights have no corresponding processing activity to act on. If you have questions or complaints, contact us at the address below; we reply within 15 business days.</p>
+
+<h2>8 · Third-party links</h2>
+<p>The in-app "Terms of Use" link opens Apple's Standard End User License Agreement; the "Privacy Policy" link returns to this page. No other third-party sites are opened.</p>
+
+<h2>9 · Changes</h2>
+<p>If a future version introduces features that need network access or involve data processing (for example optional cloud backup), we will update this policy before that feature ships and notify you prominently in the app. Each revision changes the "Last updated" date above; significant changes require your confirmation in the app before taking effect.</p>
+
+<h2>10 · Contact</h2>
+<p>Developer: Ruohu Yang (independent developer)<br>
+Email: <a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a><br>
+Support: <a href="./support">ai.cygnusyang.top/peakgo/support</a></p>
+</div>
+
+</body>
+</html>

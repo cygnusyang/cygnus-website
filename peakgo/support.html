@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="峰行 PeakGo 支持页面：校准、精度、权限、订阅取消与恢复、联系方式。">
+<title>峰行 PeakGo — 支持 / Support</title>
+<link rel="canonical" href="https://ai.cygnusyang.top/peakgo/support">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0 auto; max-width: 760px; padding: 48px 24px 96px;
+         font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", sans-serif; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin-top: 36px; }
+  .meta { color: #888; font-size: 14px; margin-bottom: 28px; }
+  .lede { border-left: 3px solid rgba(127,127,127,.45); padding: 2px 0 2px 16px; margin: 24px 0; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: #0b6b5a; }
+  dt { font-weight: 600; margin-top: 18px; }
+  dd { margin: 4px 0 0; }
+  hr { border: 0; border-top: 1px solid rgba(127,127,127,.3); margin: 56px 0; }
+  .nav { font-size: 15px; margin-bottom: 32px; }
+  .nav a { margin-right: 16px; }
+  .contact { border: 1px solid rgba(127,127,127,.35); border-radius: 8px; padding: 16px 18px; margin: 24px 0; }
+</style>
+<script src="../theme.js"></script>
+</head>
+<body>
+
+<div class="nav">
+  <a href="./">产品</a><a href="./privacy">隐私政策</a><a href="./terms">使用条款</a><a href="./support">支持</a>
+</div>
+
+<h1>峰行 PeakGo 支持</h1>
+<p class="meta">适用于 iOS 17 及以上的 iPhone</p>
+
+<p class="lede">峰行把海拔、气压、指南针、水平仪放在同一块仪表盘上，并如实标出每个读数的误差与来源。下面是最常被问到的几件事；没有找到答案就直接写信给我。</p>
+
+<div class="contact">
+<strong>联系开发者</strong><br>
+邮箱：<a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a><br>
+请在邮件里写明：iPhone 机型、iOS 版本、App 版本（设置页底部可查），以及你看到的现象。通常 1–3 个工作日内回复。
+</div>
+
+<h2>海拔为什么不准 / 为什么显示「--」</h2>
+<p>海拔有两条来源：GPS 与气压计。GPS 垂直精度本就弱于水平精度，气压高度则依赖海平面气压基准。App 把两者融合，并在数字旁恒显误差范围与来源标识（系统融合 / 已校准 / GPS 粗定位）。</p>
+<p>当信号不足或数据源无法给出可信值时，显示「--」而不是编一个数字。这是有意为之——一个假精确的海拔比没有海拔更危险。</p>
+
+<h2>怎么做已知点校准</h2>
+<ol>
+  <li>站在一个海拔已知的地点（如官方标高碑、地形图标注点、机场标高）。</li>
+  <li>打开气压详情页，进入「已知点校准」，输入该地点的真实海拔。</li>
+  <li>App 反推海平面气压并保存基准。校准后来源标识会变为「已校准」。</li>
+</ol>
+<p>校准不是一次性的：天气系统过境会让气压漂移，隔几天或跨地区出行后建议重新校准一次。</p>
+
+<h2>没有气压计的设备</h2>
+<p>部分较早的 iPhone 机型没有气压计。此时气压页会说明「无法记录气压趋势」，海拔仍可通过 GPS 提供（精度较低）。水平仪与指南针不受影响。</p>
+
+<h2>权限被拒绝了怎么办</h2>
+<ul>
+  <li>定位：iOS「设置 → 峰行 → 位置」改为「使用 App 期间」。用于测海拔、经纬度与真北。</li>
+  <li>相机 / 照片：用于水印相机。照片只写入你的相册，App 不读取你的相册。</li>
+  <li>运动与健身：用于读取气压计与高度计、指南针倾斜补偿。</li>
+</ul>
+<p>任一权限被拒，其余功能照常可用；App 不会因为缺权限而停在空页面。</p>
+
+<h2>订阅：取消、恢复、首年免费</h2>
+<ul>
+  <li><strong>取消</strong>：iOS「设置 → Apple ID → 订阅 → 峰行 → 取消订阅」。删除 App 不会取消订阅。</li>
+  <li><strong>恢复购买</strong>：换机或重装后在订阅页点「恢复购买」。</li>
+  <li><strong>退款</strong>：由 Apple 处理，前往 <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>。</li>
+  <li><strong>为什么没看到「首年免费」</strong>：免费试用每个 Apple ID 在同一订阅组内只能用一次。若你的账号此前用过该试用，页面会直接显示年费价格，这是 Apple 的规则，App 无法绕过。</li>
+</ul>
+<p>说明：海拔、气压、指南针、水平仪<strong>永久免费</strong>，不订阅也不会失效。订阅是自愿支持，换来后续新增功能与主题、无限历史趋势。</p>
+
+<h2>切换语言后界面没变</h2>
+<p>语言在设置页选择后需要<strong>重新打开 App</strong> 生效（App 不做自杀式重启）。系统语言变化同样在下次启动时应用。</p>
+
+<h2>为什么没有 iPad 版</h2>
+<p>首版只发布 iPhone 版本，横屏与 iPad 多窗口布局尚未逐一验证，与其带着没测过的版式上架，不如先不声明支持。iPad 用户仍可安装 iPhone 兼容版本。</p>
+
+<hr>
+
+<div lang="en">
+<h1>PeakGo Support</h1>
+<p class="meta">For iPhone on iOS 17 or later</p>
+
+<p class="lede">PeakGo puts altitude, pressure, compass and level on one dashboard, and labels the uncertainty and source of every reading. Below are the questions we get most; if yours isn't here, just write to us.</p>
+
+<div class="contact">
+<strong>Contact the developer</strong><br>
+Email: <a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a><br>
+Please include your iPhone model, iOS version, app version (shown at the bottom of Settings) and what you observed. We usually reply within 1–3 business days.
+</div>
+
+<h2>Why is altitude off, or why does it show "--"?</h2>
+<p>Altitude has two sources: GPS and the barometer. GPS vertical accuracy is much weaker than horizontal, and barometric altitude depends on a sea-level pressure baseline. The app fuses both and always shows the uncertainty range and source (System Fusion / Calibrated / GPS Coarse) next to the number.</p>
+<p>When signal is poor or no source can give a trustworthy value, it shows "--" rather than inventing a number. That is deliberate: a falsely precise altitude is more dangerous than none.</p>
+
+<h2>How to do Known-Point Calibration</h2>
+<ol>
+  <li>Stand at a place with a known altitude (official benchmark, map contour, airport elevation).</li>
+  <li>Open the pressure detail page and choose Known-Point Calibration, then enter the true altitude.</li>
+  <li>The app derives sea-level pressure and stores the baseline. The source label becomes "Calibrated".</li>
+</ol>
+<p>Calibration is not permanent: weather systems make pressure drift, so recalibrate every few days or when travelling between regions.</p>
+
+<h2>Devices without a barometer</h2>
+<p>Some earlier iPhone models have no barometer. In that case the pressure page states that no trend can be recorded, while altitude still comes from GPS (at lower accuracy). Level and compass are unaffected.</p>
+
+<h2>What if I denied a permission?</h2>
+<ul>
+  <li>Location: iOS Settings → PeakGo → Location → While Using the App. Used for altitude, coordinates and true north.</li>
+  <li>Camera / Photos: used by the watermark camera. Photos are only written to your library; the app never reads it.</li>
+  <li>Motion &amp; Fitness: used for barometer and altimeter data, plus compass tilt compensation.</li>
+</ul>
+<p>Denying any of them leaves the rest of the app usable; the app never strands you on an empty screen.</p>
+
+<h2>Subscription: cancel, restore, free first year</h2>
+<ul>
+  <li><strong>Cancel</strong>: iOS Settings → Apple ID → Subscriptions → PeakGo → Cancel Subscription. Deleting the app does not cancel it.</li>
+  <li><strong>Restore</strong>: tap "Restore Purchases" on the subscription page after reinstalling or switching devices.</li>
+  <li><strong>Refunds</strong>: handled by Apple at <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>.</li>
+  <li><strong>Why no "first year free"?</strong> A free trial can be used only once per Apple ID per subscription group. If your account used it before, the page shows the yearly price instead. That is Apple's rule and the app cannot bypass it.</li>
+</ul>
+<p>Note: altitude, barometer, compass and level are <strong>free permanently</strong> and never stop working without a subscription. The subscription is voluntary support that funds future instruments and themes, plus unlimited history retention.</p>
+
+<h2>I changed the language but the UI didn't change</h2>
+<p>After choosing a language in Settings, <strong>reopen the app</strong> for it to take effect (the app does not force-restart itself). Changes to the system language apply on the next launch too.</p>
+
+<h2>Why is there no iPad version?</h2>
+<p>The first release is iPhone-only. Landscape and iPad multi-window layouts have not been verified screen by screen, and shipping untested layouts is worse than not claiming support. iPad users can still install the iPhone-compatible version.</p>
+</div>
+
+</body>
+</html>
