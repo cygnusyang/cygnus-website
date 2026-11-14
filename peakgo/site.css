@@ -1,0 +1,52 @@
+/* PeakGo 落地页样式。中英两页共用，改一处两页同步。 */
+:root {
+  color-scheme: light dark;
+  --fg: #1b1e24; --bg: #f7f8fa; --muted: #6b7280;
+  --line: rgba(127, 127, 127, .25); --accent: #0b6b5a; --card: rgba(127, 127, 127, .06);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fg: #e8eaef; --bg: #0e1420; --muted: #9aa3b2; --accent: #4fd1b5; --card: rgba(255, 255, 255, .04); }
+}
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", sans-serif;
+  overflow-wrap: break-word;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
+h1 { font-size: 34px; line-height: 1.3; margin: 0 0 12px; letter-spacing: -.01em; }
+h2 { font-size: 20px; margin-top: 44px; }
+p.lede { font-size: 18px; color: var(--muted); margin: 0 0 32px; }
+ul { padding-left: 22px; }
+li { margin: 8px 0; }
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; }
+.nav { font-size: 15px; margin-bottom: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin: 24px 0; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.card h3 { margin: 0 0 6px; font-size: 16px; }
+.card p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.6; }
+/* 手机竖屏图很瘦：150px 起的自适应列在 390px 宽下两列并排；宽屏固定三列，
+   五张图排成 3 + 2，不留四列那种孤零零一张。 */
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 22px 0 8px; }
+@media (min-width: 700px) { .shots { grid-template-columns: repeat(3, 1fr); } }
+.shots figure { margin: 0; }
+.shots img { display: block; width: 100%; border-radius: 14px; border: 1px solid var(--line); }
+.shots figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.price, .download { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 24px 0; }
+.price strong, .download strong { font-size: 18px; }
+.price p, .download p { margin: 8px 0; }
+.small { font-size: 14px; color: var(--muted); }
+.foot { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.foot a { margin-right: 14px; }
+.langmenu { position: relative; display: inline-block; }
+.langmenu summary { cursor: pointer; color: var(--accent); list-style: none; }
+.langmenu summary::-webkit-details-marker { display: none; }
+.langmenu summary::after { content: " ▾"; }
+.langmenu ul {
+  position: absolute; z-index: 10; right: 0; margin: 6px 0 0; padding: 6px 0; list-style: none;
+  min-width: 150px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+}
+.langmenu li { margin: 0; }
+.langmenu li a, .langmenu li span { display: block; margin: 0; padding: 5px 14px; }
+.langmenu li [aria-current] { color: var(--muted); font-weight: 600; }

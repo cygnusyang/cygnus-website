@@ -1,55 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-site="peakgo" data-page="peakgo-home">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0e1420">
 <meta name="description" content="PeakGo puts altitude, pressure, compass and level on one dashboard, and labels the error range and source of every reading. Free download, no ads, no account.">
 <title>PeakGo — Outdoor Dashboard</title>
 <link rel="canonical" href="https://ai.cygnusyang.top/peakgo/">
 <link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/">
 <link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh">
 <link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/">
-<style>
-  :root { color-scheme: light dark; --fg: #1b1e24; --bg: #f7f8fa; --muted: #6b7280; --line: rgba(127,127,127,.25); --accent: #0b6b5a; }
-  @media (prefers-color-scheme: dark) {
-    :root { --fg: #e8eaef; --bg: #0e1420; --muted: #9aa3b2; --accent: #4fd1b5; }
-  }
-  body { margin: 0; background: var(--bg); color: var(--fg);
-         font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", sans-serif; }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
-  h1 { font-size: 34px; line-height: 1.3; margin: 0 0 12px; letter-spacing: -.01em; }
-  h2 { font-size: 20px; margin-top: 44px; }
-  p.lede { font-size: 18px; color: var(--muted); margin: 0 0 32px; }
-  ul { padding-left: 22px; }
-  li { margin: 8px 0; }
-  a { color: var(--accent); }
-  .nav { font-size: 15px; margin-bottom: 40px; }
-  .nav a { margin-right: 16px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin: 24px 0; }
-  .card { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
-  .card h3 { margin: 0 0 6px; font-size: 16px; }
-  .card p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.6; }
-  .price { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 24px 0; }
-  .price strong { font-size: 18px; }
-  .foot { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
-  .foot a { margin-right: 14px; }
-  .langmenu { position: relative; display: inline-block; }
-  .langmenu summary { cursor: pointer; color: var(--accent); list-style: none; }
-  .langmenu summary::-webkit-details-marker { display: none; }
-  .langmenu summary::after { content: " ▾"; }
-  .langmenu ul { position: absolute; z-index: 10; right: 0; margin: 6px 0 0; padding: 6px 0; list-style: none;
-                 min-width: 150px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
-                 box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-  .langmenu li { margin: 0; }
-  .langmenu li a, .langmenu li span { display: block; margin: 0; padding: 5px 14px; }
-  .langmenu li [aria-current] { color: var(--muted); font-weight: 600; }
-</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ai.cygnusyang.top">
+<meta property="og:title" content="PeakGo — Outdoor Dashboard">
+<meta property="og:description" content="Altitude, pressure, compass and level on one screen. Every reading shows its error range and data source. Free, no ads, no account.">
+<meta property="og:url" content="https://ai.cygnusyang.top/peakgo/">
+<meta property="og:image" content="https://ai.cygnusyang.top/peakgo/assets/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PeakGo — Outdoor Dashboard">
+<meta name="twitter:description" content="Altitude, pressure, compass and level on one screen. Every reading shows its error range and data source.">
+<meta name="twitter:image" content="https://ai.cygnusyang.top/peakgo/assets/og-en.jpg">
+<link rel="stylesheet" href="site.css">
 <script src="../theme.js"></script>
+<script src="../kaidoplan/analytics.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://ai.cygnusyang.top/peakgo/#app",
+  "name": "PeakGo",
+  "alternateName": "峰行",
+  "applicationCategory": "NavigationApplication",
+  "applicationSubCategory": "Altimeter, barometer, compass and level",
+  "operatingSystem": "iOS 17.0 or later",
+  "url": "https://ai.cygnusyang.top/peakgo/",
+  "description": "An outdoor dashboard for iPhone: GPS and barometric altitude, live pressure with a trend curve, compass with magnetic and true north, two-axis level, and a watermark camera. Every reading carries its error range and data source, and the app writes -- instead of an invented number when a value cannot be trusted.",
+  "inLanguage": ["en", "zh-Hans", "zh-Hant", "ja", "ko", "de", "fr", "it", "es"],
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "GPS and barometric altitude with known-point calibration",
+    "Live pressure with trend curve",
+    "Compass with magnetic / true north",
+    "Two-axis spirit level",
+    "Watermark camera"
+  ],
+  "privacyPolicy": "https://ai.cygnusyang.top/peakgo/privacy",
+  "sameAs": ["https://github.com/cygnusyang/peakgo-releases"]
+}
+</script>
 </head>
 <body>
 <div class="wrap">
 
-<div class="nav">
+<nav class="nav">
   <a href="./">Product</a><a href="./privacy">Privacy</a><a href="./terms">Terms</a><a href="./support">Support</a>
   <details class="langmenu">
     <summary>English</summary>
@@ -65,10 +73,17 @@
       <li><a href="./it" lang="it">Italiano</a></li>
     </ul>
   </details>
-</div>
+</nav>
+
+<main>
 
 <h1>PeakGo<br>Open it and you have an outdoor dashboard</h1>
 <p class="lede">Altitude, pressure, compass and level on one screen. Every reading carries its error range and data source, and where a value cannot be trusted the app writes "--" instead of handing you a falsely precise number.</p>
+
+<div class="download" id="download">
+  <p><strong>iPhone, iOS 17 or later.</strong> The first release is in App Store review — the download badge replaces this note the day it goes live. <a href="./support">Get notified at support</a>.</p>
+  <p class="small">Free to download. No account, no ads, no data collection.</p>
+</div>
 
 <h2>Four instruments, one screen</h2>
 <div class="grid">
@@ -90,14 +105,38 @@
   </div>
 </div>
 
+<h2>Screens</h2>
+<div class="shots">
+  <figure>
+    <img src="assets/dashboard-en.jpg" width="360" height="782" loading="lazy" alt="Dashboard: compass bearing 42 degrees north-east, altitude 4298 metres plus or minus 2.5, pressure 592.9 hectopascals with a falling trend curve.">
+    <figcaption>Dashboard — bearing, altitude and pressure on one screen</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/dashboard-light-en.jpg" width="360" height="782" loading="lazy" alt="The same dashboard in light appearance.">
+    <figcaption>Light appearance, same layout</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/level-en.jpg" width="360" height="782" loading="lazy" alt="Level page: two-axis tilt readout with a horizontal bubble indicator.">
+    <figcaption>Level — two-axis tilt</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/calibration-en.jpg" width="360" height="782" loading="lazy" alt="Known-point calibration screen with an altitude input field and a start button.">
+    <figcaption>Known-point calibration</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/trend-en.jpg" width="360" height="782" loading="lazy" alt="Pressure trend detail: an hour of readings drawn as a curve with the first and last values labelled.">
+    <figcaption>Pressure trend — one hour at a glance</figcaption>
+  </figure>
+</div>
+
 <h2>Watermark camera</h2>
 <p>Stamp altitude, coordinates, time, heading and pressure onto a photo in one tap, with the fields you choose. Trip and summit records with no post-processing.</p>
 
 <h2>Free, and not funded by ads</h2>
 <div class="price">
 <p><strong>Everything above is free permanently</strong> — it does not stop working without a subscription.</p>
-<p>Optional subscription "PeakGo Yearly Support": first year free, then ¥1 / year, cancellable at any time. It buys the instruments and themes added later, and keeps this app alive without ads.</p>
-<p style="font-size:14px;color:var(--muted)">To cancel: iOS Settings → Apple ID → Subscriptions. Deleting the app does not cancel it.</p>
+<p>Optional subscription "PeakGo Yearly Support": the first year is free, then it renews yearly at the price the App Store shows in your region (CNY 1 per year in China). It buys the instruments and themes added later, and keeps this app alive without ads.</p>
+<p class="small">To cancel: iOS Settings → Apple ID → Subscriptions. Deleting the app does not cancel it.</p>
 </div>
 
 <h2>Privacy is the default</h2>
@@ -108,8 +147,10 @@
 </ul>
 <p><a href="./privacy">Read the full privacy policy</a></p>
 
-<h2>Availability</h2>
-<p>iPhone, iOS 17 or later. The first release makes no iPad claim: landscape and multi-window layouts have not been verified screen by screen, so they are not listed as supported.</p>
+<h2>Availability and languages</h2>
+<p>iPhone, iOS 17 or later. Nine interface languages: English, Simplified Chinese, Traditional Chinese, Japanese, Korean, German, French, Spanish and Italian. The first release makes no iPad claim: landscape and multi-window layouts have not been verified screen by screen, so they are not listed as supported.</p>
+
+</main>
 
 <div class="foot">
 <p>This app is an outdoor aid. Its readings are for everyday reference only; it is not professional surveying, navigation or life-safety equipment. Where personal safety is at stake, use professional instruments.</p>
