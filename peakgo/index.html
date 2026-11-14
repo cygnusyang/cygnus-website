@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="峰行 PeakGo：把海拔、气压、指南针、水平仪放在同一块仪表盘上，如实标出每个读数的误差与来源。免费下载，无广告，无账号。">
-<title>峰行 PeakGo — 户外仪表盘</title>
+<meta name="description" content="PeakGo puts altitude, pressure, compass and level on one dashboard, and labels the error range and source of every reading. Free download, no ads, no account.">
+<title>PeakGo — Outdoor Dashboard</title>
 <link rel="canonical" href="https://ai.cygnusyang.top/peakgo/">
+<link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/">
+<link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh">
+<link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/">
 <style>
   :root { color-scheme: light dark; --fg: #1b1e24; --bg: #f7f8fa; --muted: #6b7280; --line: rgba(127,127,127,.25); --accent: #0b6b5a; }
   @media (prefers-color-scheme: dark) {
@@ -30,6 +33,16 @@
   .price strong { font-size: 18px; }
   .foot { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
   .foot a { margin-right: 14px; }
+  .langmenu { position: relative; display: inline-block; }
+  .langmenu summary { cursor: pointer; color: var(--accent); list-style: none; }
+  .langmenu summary::-webkit-details-marker { display: none; }
+  .langmenu summary::after { content: " ▾"; }
+  .langmenu ul { position: absolute; z-index: 10; right: 0; margin: 6px 0 0; padding: 6px 0; list-style: none;
+                 min-width: 150px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
+                 box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+  .langmenu li { margin: 0; }
+  .langmenu li a, .langmenu li span { display: block; margin: 0; padding: 5px 14px; }
+  .langmenu li [aria-current] { color: var(--muted); font-weight: 600; }
 </style>
 <script src="../theme.js"></script>
 </head>
@@ -37,59 +50,73 @@
 <div class="wrap">
 
 <div class="nav">
-  <a href="./">产品</a><a href="./privacy-zh">隐私政策</a><a href="./terms">使用条款</a><a href="./support">支持</a>
+  <a href="./">Product</a><a href="./privacy">Privacy</a><a href="./terms">Terms</a><a href="./support">Support</a>
+  <details class="langmenu">
+    <summary>English</summary>
+    <ul>
+      <li><span aria-current="page">English</span></li>
+      <li><a href="./zh" lang="zh-Hans">简体中文</a></li>
+      <li><a href="./zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="./ja" lang="ja">日本語</a></li>
+      <li><a href="./ko" lang="ko">한국어</a></li>
+      <li><a href="./de" lang="de">Deutsch</a></li>
+      <li><a href="./fr" lang="fr">Français</a></li>
+      <li><a href="./es" lang="es">Español</a></li>
+      <li><a href="./it" lang="it">Italiano</a></li>
+    </ul>
+  </details>
 </div>
 
-<h1>峰行 PeakGo<br>打开就是一块户外仪表盘</h1>
-<p class="lede">海拔、气压、指南针、水平仪同屏。每个读数都带着误差范围与数据来源，测不准就写「--」，不给你一个假精确的数字。</p>
+<h1>PeakGo<br>Open it and you have an outdoor dashboard</h1>
+<p class="lede">Altitude, pressure, compass and level on one screen. Every reading carries its error range and data source, and where a value cannot be trusted the app writes "--" instead of handing you a falsely precise number.</p>
 
-<h2>四件仪表，一块屏幕</h2>
+<h2>Four instruments, one screen</h2>
 <div class="grid">
   <div class="card">
-    <h3>海拔</h3>
-    <p>GPS 与气压双源融合，米 / 英尺切换，支持已知点校准把基准定准。</p>
+    <h3>Altitude</h3>
+    <p>GPS and barometric sources fused, metres / feet toggle, known-point calibration to pin the baseline.</p>
   </div>
   <div class="card">
-    <h3>气压计</h3>
-    <p>实时气压，hPa / inHg / mmHg 切换，趋势曲线一眼看涨跌。</p>
+    <h3>Barometer</h3>
+    <p>Live pressure, hPa / inHg / mmHg toggle, and a trend curve that shows the direction at a glance.</p>
   </div>
   <div class="card">
-    <h3>指南针</h3>
-    <p>磁北 / 真北切换、方位角、经纬度，8 字校准引导与磁干扰提示。</p>
+    <h3>Compass</h3>
+    <p>Magnetic / true north toggle, bearing, coordinates, figure-8 calibration guidance and magnetic interference warnings.</p>
   </div>
   <div class="card">
-    <h3>水平仪</h3>
-    <p>双轴倾角，露营、架三脚架、挂画时对齐用得上。</p>
+    <h3>Level</h3>
+    <p>Two-axis tilt — useful for aligning things when camping, setting up a tripod or hanging a picture.</p>
   </div>
 </div>
 
-<h2>水印相机</h2>
-<p>一键把海拔、坐标、时间、方向、气压叠到照片上，字段自选。旅行与登山的记录，不需要后期再拼。</p>
+<h2>Watermark camera</h2>
+<p>Stamp altitude, coordinates, time, heading and pressure onto a photo in one tap, with the fields you choose. Trip and summit records with no post-processing.</p>
 
-<h2>免费，且不靠广告</h2>
+<h2>Free, and not funded by ads</h2>
 <div class="price">
-<p><strong>上面这些全部永久免费</strong>，不订阅也不会失效。</p>
-<p>可选订阅「PeakGo 年度支持」：首年免费，之后 ¥1 / 年，可随时取消。它换来后续新增的仪表与主题，以及让这个 App 继续没有广告地活下去。</p>
-<p style="font-size:14px;color:var(--muted)">取消方式：iOS 设置 → Apple ID → 订阅。删除 App 不会自动取消。</p>
+<p><strong>Everything above is free permanently</strong> — it does not stop working without a subscription.</p>
+<p>Optional subscription "PeakGo Yearly Support": first year free, then ¥1 / year, cancellable at any time. It buys the instruments and themes added later, and keeps this app alive without ads.</p>
+<p style="font-size:14px;color:var(--muted)">To cancel: iOS Settings → Apple ID → Subscriptions. Deleting the app does not cancel it.</p>
 </div>
 
-<h2>隐私是默认项</h2>
+<h2>Privacy is the default</h2>
 <ul>
-  <li>所有读数在本机计算，<strong>不上传</strong>；没有账号、没有云同步。</li>
-  <li>没有广告 SDK，没有第三方统计，不做追踪。</li>
-  <li>定位、相机、运动权限只在本机使用，拒绝任一权限其余功能照常可用。</li>
+  <li>All readings are computed on device and <strong>never uploaded</strong>; no account, no cloud sync.</li>
+  <li>No ad SDK, no third-party analytics, no tracking.</li>
+  <li>Location, camera and motion permissions are used on device only; denying any one of them leaves the rest usable.</li>
 </ul>
-<p><a href="./privacy-zh">看完整的隐私政策</a></p>
+<p><a href="./privacy">Read the full privacy policy</a></p>
 
-<h2>可用范围</h2>
-<p>iPhone，iOS 17 及以上。首版不做 iPad 声明——横屏与多窗口布局没有逐屏验证过，就不写进支持范围。</p>
+<h2>Availability</h2>
+<p>iPhone, iOS 17 or later. The first release makes no iPad claim: landscape and multi-window layouts have not been verified screen by screen, so they are not listed as supported.</p>
 
 <div class="foot">
-<p>本 App 为户外辅助工具，读数仅供日常参考，不是专业测量、导航或生命安全设备。涉及人身安全时请使用专业仪器。</p>
+<p>This app is an outdoor aid. Its readings are for everyday reference only; it is not professional surveying, navigation or life-safety equipment. Where personal safety is at stake, use professional instruments.</p>
 <p>
-  <a href="./privacy-zh">隐私政策</a>
-  <a href="./terms">使用条款</a>
-  <a href="./support">支持</a>
+  <a href="./privacy">Privacy</a>
+  <a href="./terms">Terms</a>
+  <a href="./support">Support</a>
 </p>
 <p>© 2026 Ruohu Yang · <a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a></p>
 </div>
