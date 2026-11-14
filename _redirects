@@ -1,19 +1,12 @@
-# Cloudflare Pages 重定向规则（2026-11-06）
-# 旧的 /kaido/ 目录已迁到 /kaidoplan/。GitHub Pages 上只能用 meta refresh（不传权重），
-# 这里用真 301。逐条写，是为了让子页面落到对应的新页面，而不是全部落回首页。
-
-/kaido/            /kaidoplan/              301
-/kaido/index.html  /kaidoplan/              301
-/kaido/zh.html     /kaidoplan/zh          301
-/kaido/privacy.html /kaidoplan/privacy     301
-/kaido/terms.html  /kaidoplan/terms       301
-/kaido/refund.html /kaidoplan/refund      301
-/kaido/*           /kaidoplan/              301
-
-# 无扩展名的友好入口
-/kaidoplan  /kaidoplan/  301
-/bitcoffer  /bitcoffer/  301
-
-# 旧英文产品页入口（默认语言改为 /bitcoffer/ 后）
-/bitcoffer/en       /bitcoffer/  301
-/bitcoffer/en.html  /bitcoffer/  301
+# 重定向规则占位文件（2026-11-14）
+#
+# 本文件是 Cloudflare Pages / Netlify 的 _redirects 格式，GitHub Pages **完全不执行**，
+# 所以这里曾经写的 10 条 301 规则一条都没有生效（实测 2026-11-14：
+# https://ai.cygnusyang.top/kaido/privacy.html 返回 200，而不是 301）。
+#
+# 现在这些跳转改由 kaido/ 下的 meta refresh 存根实现（5 个文件直达
+# https://kaidoplan.cygnusyang.top/ 对应语言页面）。本文件故意不再保留任何规则行，
+# 以免有人误以为在这里改一行就能生效。
+#
+# 若将来整站迁到 Cloudflare Pages：先删掉 kaido/ 下的 meta refresh 存根，
+# 再在这里重建 301 规则，并实测状态码确认生效。
