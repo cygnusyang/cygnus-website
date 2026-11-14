@@ -41,7 +41,7 @@
   <!-- PeakGo（英文为默认页，中文在 /peakgo/zh；7 个语言入口存根为 noindex，不收录） -->
   <url>
     <loc>https://ai.cygnusyang.top/peakgo/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/"/>
