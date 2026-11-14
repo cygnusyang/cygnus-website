@@ -55,8 +55,4 @@ Allow: /
 User-agent: DeepSeekBot
 Allow: /
 
-# 已迁移的旧路径不需要抓（同时有 301，双保险）
-User-agent: *
-Disallow: /kaido/
-
 Sitemap: https://ai.cygnusyang.top/sitemap.xml

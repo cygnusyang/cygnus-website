@@ -38,12 +38,24 @@
 
   <!-- KaidoPlan -->
 
-  <!-- PeakGo（仅中文站点，无英文版本） -->
+  <!-- PeakGo（英文为默认页，中文在 /peakgo/zh；7 个语言入口存根为 noindex，不收录） -->
   <url>
     <loc>https://ai.cygnusyang.top/peakgo/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/peakgo/zh</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/"/>
   </url>
 
   <!-- Bitcoffer -->
@@ -94,11 +106,33 @@
     <loc>https://ai.cygnusyang.top/terms</loc>
     <lastmod>2026-11-06</lastmod>
     <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/terms"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/terms-zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/terms"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/terms-zh</loc>
+    <lastmod>2026-11-14</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/terms"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/terms-zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/terms"/>
   </url>
   <url>
     <loc>https://ai.cygnusyang.top/refund</loc>
     <lastmod>2026-11-06</lastmod>
     <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/refund"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/refund-zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/refund"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/refund-zh</loc>
+    <lastmod>2026-11-14</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/refund"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/refund-zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/refund"/>
   </url>
   <url>
     <loc>https://ai.cygnusyang.top/peakgo/privacy</loc>
@@ -115,6 +149,38 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/privacy"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/privacy-zh"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/privacy"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/peakgo/terms</loc>
+    <lastmod>2026-11-14</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/terms"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/terms-zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/terms"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/peakgo/terms-zh</loc>
+    <lastmod>2026-11-14</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/terms"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/terms-zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/terms"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/peakgo/support</loc>
+    <lastmod>2026-11-14</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/support"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/support-zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/support"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/peakgo/support-zh</loc>
+    <lastmod>2026-11-14</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/support"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/support-zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/support"/>
   </url>
   <url>
     <loc>https://ai.cygnusyang.top/bitcoffer/privacy</loc>
