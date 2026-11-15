@@ -5,3 +5,108 @@
 .theme-toggle svg{display:block}
 /* 网络自证段里的内联命令：等宽 + 细边框，避免在句子里读成普通词 */
 .section-head code,.feature p code{font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;padding:1px 5px;border-radius:5px;background:var(--paper,#fff);border:1px solid var(--line-strong,var(--line,#dfe1e8));color:var(--ink);white-space:nowrap}
+
+section.pricing {
+  display: grid;
+  grid-template-areas: "intro plan" "faq plan";
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto 1fr;
+  gap: 18px clamp(28px, 5vw, 64px);
+  align-items: start;
+  padding-block: 60px;
+}
+
+.pricing .section-head {
+  grid-area: intro;
+  margin: 0;
+}
+
+.pricing .section-head h2 {
+  text-wrap: balance;
+}
+
+.pricing .license {
+  grid-area: plan;
+  display: block;
+}
+
+.pricing .price {
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-size: 28px;
+  font-weight: 650;
+  line-height: 1.15;
+}
+
+.pricing .price span {
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.pricing .actions .button {
+  font-size: 14px;
+  text-align: center;
+}
+
+.pricing .pricing-links {
+  margin: 14px 0 0;
+  font-size: 13px;
+}
+
+.pricing a:not(.button) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pricing-faq {
+  grid-area: faq;
+}
+
+.pricing-faq details {
+  border-top: 1px solid var(--line);
+}
+
+.pricing-faq details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.pricing-faq summary {
+  padding: 9px 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.pricing-faq summary::marker {
+  color: var(--muted);
+}
+
+.pricing-faq p {
+  margin: 0 0 12px;
+  padding-inline-start: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  section.pricing {
+    grid-template-areas: "intro" "plan" "faq";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 650px) {
+  section.pricing {
+    padding-block: 42px !important;
+  }
+
+  .pricing .license article {
+    padding: 20px;
+  }
+
+  .pricing .actions .button {
+    flex-basis: 100%;
+  }
+}

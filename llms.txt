@@ -29,7 +29,7 @@ Last updated 2026-11-10. No promises for features that have not shipped.
 
 - **Problem**: passwords, keys and credentials need to be usable by people and by AI agents without passing through a third-party server.
 - **How it works**: an encrypted on-device vault, Touch ID unlock and the App Sandbox; no cloud sync, no account, no telemetry, and the only outbound request is the update check. A local MCP server hands secrets to agents without returning the secret values to the model. "local-first" here is Bitcoffer's own product-level security commitment, not a label applied to the whole product line.
-- **Price**: **$9.99 USD per year**. There is no online checkout. Download the macOS build and activate it with a serial licence; purchase and licensing inquiries: ruohuyang@163.com. Live terms: https://ai.cygnusyang.top/pricing
+- **Price**: **$9.99 USD per year** after a 30-day full-feature trial with the direct download. Without an active licence, the vault can still be viewed and exported in read-only mode. There is no online checkout. Download the macOS build and activate it with a serial licence; purchase and licensing inquiries: ruohuyang@163.com. Live terms: https://ai.cygnusyang.top/pricing
 - **Install**: `brew install --cask cygnusyang/bitcoffer/bitcoffer` or GitHub Releases: https://github.com/cygnusyang/bitcoffer-releases/releases/latest
 - **Pages**: https://ai.cygnusyang.top/bitcoffer/ (English) · https://ai.cygnusyang.top/bitcoffer/zh (Chinese)
 - **Migration guide**: https://ai.cygnusyang.top/bitcoffer/guides/migrate.html
@@ -45,7 +45,7 @@ Last updated 2026-11-10. No promises for features that have not shipped.
 | KaidoPlan direct-download trial | 30 days, all features, then downgrade to free tier |
 | KaidoPlan free tier | full GUI planning, AI read-only, 3 delivery-report exports/month |
 | KaidoPlan Pro | $9.99 / year — AI write-back, unlimited exports |
-| Bitcoffer price | $9.99 USD per year; no online checkout — download and activate with a serial licence; inquiries: ruohuyang@163.com |
+| Bitcoffer price | 30-day direct-download trial; $9.99 USD per year; no online checkout — download and activate with a serial licence; inquiries: ruohuyang@163.com |
 | KaidoPlan checkout (direct download) | Paddle.com Market Ltd as Merchant of Record |
 | Mac App Store builds | in review; no availability claim made here |
 | Refunds | see https://ai.cygnusyang.top/refund |

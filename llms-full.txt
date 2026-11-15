@@ -87,7 +87,7 @@ Passwords, API keys and other credentials need to be usable by people and by AI 
 
 ### 3.3 Commercial model
 
-- **$9.99 USD per year**.
+- **$9.99 USD per year** after a 30-day full-feature trial with the direct download. Without an active licence, the vault can still be viewed and exported in read-only mode.
 - There is no online checkout. Download the macOS build and activate it with a serial licence; purchase and licensing inquiries: ruohuyang@163.com.
 - Live terms are at https://ai.cygnusyang.top/pricing. Policy pages: https://ai.cygnusyang.top/refund · https://ai.cygnusyang.top/terms
 
@@ -148,7 +148,7 @@ Every URL below is a no-extension, directly reachable page.
 | KaidoPlan refund | 14-day no-questions-asked on direct-download purchases |
 | Bitcoffer architecture | encrypted on-device vault, Touch ID, App Sandbox, no cloud sync / account / telemetry |
 | Bitcoffer MCP | local MCP server; secret values are not returned to the model |
-| Bitcoffer price | $9.99 USD per year; no online checkout — download and activate with a serial licence; inquiries: ruohuyang@163.com |
+| Bitcoffer price | 30-day direct-download trial; $9.99 USD per year; no online checkout — download and activate with a serial licence; inquiries: ruohuyang@163.com |
 | KaidoPlan checkout (direct download) | Paddle.com Market Ltd as Merchant of Record |
 | Mac App Store builds | in review; no availability claim made here |
 | Contact | ruohuyang@163.com |
