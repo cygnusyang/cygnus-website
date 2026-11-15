@@ -47,8 +47,8 @@
 <h2>2 · 什么留在你的 Mac 上</h2>
 <table>
   <tr><th>数据</th><th>位置</th><th>保护</th></tr>
-  <tr><td>密码库（条目、TOTP 密钥、通行密钥元数据）</td><td><code>~/Library/Containers/top.cygnusyang.coffer/Data/Documents/Bitcoffer/&lt;vault-uuid&gt;/</code></td><td>Argon2id 派生密钥 + AEAD；主密码从不存储</td></tr>
-  <tr><td>诊断日志</td><td><code>~/Library/Containers/top.cygnusyang.coffer/Data/Library/Logs/Bitcoffer-diag.log</code></td><td>本地纯文本，<strong>从不自动上传</strong></td></tr>
+  <tr><td>密码库（条目、TOTP 密钥、通行密钥元数据）</td><td><code>~/.bitcoffer/vaults/&lt;vault-uuid&gt;/</code></td><td>Argon2id 派生密钥 + AEAD；主密码从不存储</td></tr>
+  <tr><td>诊断日志</td><td><code>~/Library/Logs/Bitcoffer-diag.log</code></td><td>本地纯文本，<strong>从不自动上传</strong></td></tr>
   <tr><td>剪贴板</td><td>macOS 剪贴板，仅在你复制字段时写入</td><td>可选：按你设定的超时自动清空</td></tr>
   <tr><td>偏好设置</td><td>应用容器内的 UserDefaults</td><td>语言、锁屏超时等</td></tr>
 </table>
@@ -101,7 +101,7 @@
     应当只看到 <code>com.apple.security.app-sandbox</code> 与 <code>com.apple.security.network.client</code>，再无其他 <code>network.*</code> 键。</li>
   <li><strong>盯着流量</strong> —— 用 Little Snitch / LuLu / <code>nettop</code> 观察，或者干脆断网：除检查更新外，其余功能照常工作。</li>
   <li><strong>读源码</strong> —— 网络代码只存在于更新模块 <code>macos/Bitcoffer/Updater/</code>，搜索 <code>URLSession</code> 即可枚举全部调用点。</li>
-  <li><strong>看日志</strong> —— <code>~/Library/Containers/top.cygnusyang.coffer/Data/Library/Logs/Bitcoffer-diag.log</code> 是纯文本，直接读。</li>
+  <li><strong>看日志</strong> —— <code>~/Library/Logs/Bitcoffer-diag.log</code> 是纯文本，直接读。</li>
 </ol>
 
 <h2>9 · 政策变更</h2>

@@ -58,33 +58,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/"/>
   </url>
 
-  <!-- Bitcoffer -->
-  <url>
-    <loc>https://ai.cygnusyang.top/bitcoffer/</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/bitcoffer/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/bitcoffer/zh"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/bitcoffer/"/>
-  </url>
-  <url>
-    <loc>https://ai.cygnusyang.top/bitcoffer/zh</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/bitcoffer/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/bitcoffer/zh"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/bitcoffer/"/>
-  </url>
-
-  <url>
-    <loc>https://ai.cygnusyang.top/bitcoffer/guides/migrate.html</loc>
-    <lastmod>2026-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+  <!-- Bitcoffer 营销页 2026-11-15 迁到独立站 https://bitcoffer.cygnusyang.top/（自带 sitemap.xml）；
+       旧路径只剩跳转存根，不再登记。法务页（/bitcoffer/privacy、/bitcoffer/privacy-zh）仍在下方单独登记。 -->
   <!-- 法律页：可索引，但不给权重 -->
   <url>
     <loc>https://ai.cygnusyang.top/privacy</loc>

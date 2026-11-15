@@ -47,8 +47,8 @@
 <h2>2 · What stays on your Mac</h2>
 <table>
   <tr><th>Data</th><th>Where</th><th>Protection</th></tr>
-  <tr><td>Vault (items, TOTP secrets, passkey metadata)</td><td><code>~/Library/Containers/top.cygnusyang.coffer/Data/Documents/Bitcoffer/&lt;vault-uuid&gt;/</code></td><td>Argon2id-derived key + AEAD; master password never stored</td></tr>
-  <tr><td>Diagnostics log</td><td><code>~/Library/Containers/top.cygnusyang.coffer/Data/Library/Logs/Bitcoffer-diag.log</code></td><td>Local text; <strong>never uploaded automatically</strong></td></tr>
+  <tr><td>Vault (items, TOTP secrets, passkey metadata)</td><td><code>~/.bitcoffer/vaults/&lt;vault-uuid&gt;/</code></td><td>Argon2id-derived key + AEAD; master password never stored</td></tr>
+  <tr><td>Diagnostics log</td><td><code>~/Library/Logs/Bitcoffer-diag.log</code></td><td>Local text; <strong>never uploaded automatically</strong></td></tr>
   <tr><td>Clipboard</td><td>macOS pasteboard, only when you copy a field</td><td>Optional auto-clear after a timeout you set</td></tr>
   <tr><td>Preferences</td><td><code>UserDefaults</code> in the app container</td><td>Language, lock timeout, etc.</td></tr>
 </table>
@@ -101,7 +101,7 @@
     You should see <code>com.apple.security.app-sandbox</code> and <code>com.apple.security.network.client</code>, and no other <code>network.*</code> key.</li>
   <li><strong>Watch the traffic</strong> — run the app under Little Snitch / LuLu / <code>nettop</code>, or simply disconnect from the network: everything except the update check keeps working.</li>
   <li><strong>Read the source</strong> — network code is isolated in the updater: <code>macos/Bitcoffer/Updater/</code>. Grep for <code>URLSession</code> to enumerate every call site.</li>
-  <li><strong>Check the logs</strong> — <code>~/Library/Containers/top.cygnusyang.coffer/Data/Library/Logs/Bitcoffer-diag.log</code> is plain text; read it.</li>
+  <li><strong>Check the logs</strong> — <code>~/Library/Logs/Bitcoffer-diag.log</code> is plain text; read it.</li>
 </ol>
 
 <h2>9 · Changes to this policy</h2>

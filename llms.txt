@@ -31,8 +31,8 @@ Last updated 2026-11-10. No promises for features that have not shipped.
 - **How it works**: an encrypted on-device vault, Touch ID unlock and the App Sandbox; no cloud sync, no account, no telemetry, and the only outbound request is the update check. A local MCP server hands secrets to agents without returning the secret values to the model. "local-first" here is Bitcoffer's own product-level security commitment, not a label applied to the whole product line.
 - **Price**: **$9.99 USD per year** after a 30-day full-feature trial with the direct download. Without an active licence, the vault can still be viewed and exported in read-only mode. There is no online checkout. Download the macOS build and activate it with a serial licence; purchase and licensing inquiries: ruohuyang@163.com. Live terms: https://ai.cygnusyang.top/pricing
 - **Install**: `brew install --cask cygnusyang/bitcoffer/bitcoffer` or GitHub Releases: https://github.com/cygnusyang/bitcoffer-releases/releases/latest
-- **Pages**: https://ai.cygnusyang.top/bitcoffer/ (English) · https://ai.cygnusyang.top/bitcoffer/zh (Chinese)
-- **Migration guide**: https://ai.cygnusyang.top/bitcoffer/guides/migrate.html
+- **Pages**: https://bitcoffer.cygnusyang.top/ (English) · https://bitcoffer.cygnusyang.top/zh (Chinese)
+- **Migration guide**: https://bitcoffer.cygnusyang.top/guides/migrate.html
 
 ## Key facts
 
@@ -58,8 +58,8 @@ Last updated 2026-11-10. No promises for features that have not shipped.
 - https://ai.cygnusyang.top/about — about the developer
 - https://ai.cygnusyang.top/privacy · https://ai.cygnusyang.top/terms · https://ai.cygnusyang.top/refund — site policies
 - https://ai.cygnusyang.top/kaidoplan/ · https://ai.cygnusyang.top/kaidoplan/zh — KaidoPlan
-- https://ai.cygnusyang.top/bitcoffer/ · https://ai.cygnusyang.top/bitcoffer/zh — Bitcoffer
-- https://ai.cygnusyang.top/kaidoplan/privacy · https://ai.cygnusyang.top/kaidoplan/terms · https://ai.cygnusyang.top/kaidoplan/refund · https://ai.cygnusyang.top/bitcoffer/privacy — product policies
+- https://bitcoffer.cygnusyang.top/ · https://bitcoffer.cygnusyang.top/zh — Bitcoffer
+- https://ai.cygnusyang.top/kaidoplan/privacy · https://ai.cygnusyang.top/kaidoplan/terms · https://ai.cygnusyang.top/kaidoplan/refund · https://bitcoffer.cygnusyang.top/privacy — product policies
 
 ## Contact
 
