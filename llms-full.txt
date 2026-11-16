@@ -69,6 +69,8 @@ Or download the latest build: https://github.com/cygnusyang/KaidoPlan/releases/l
 
 The 30-day trial and the free-tier write policy are implemented in KaidoPlan **v3.1.0** (released 2026-11-06) by the source components `TrialClock` and `MCPWritePolicy`. The model above applies to that release and later direct-download builds. Source: https://github.com/cygnusyang/KaidoPlan
 
+`v3.1.0` here is the implementation baseline for the licence model, not the current release. The current release number is stated in one place only: https://kaidoplan.cygnusyang.top/llms.txt
+
 ---
 
 ## 3. Bitcoffer — full fact sheet
