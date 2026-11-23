@@ -41,21 +41,42 @@
   <!-- PeakGo（英文为默认页，中文在 /peakgo/zh；7 个语言入口存根为 noindex，不收录） -->
   <url>
     <loc>https://ai.cygnusyang.top/peakgo/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/"/>
   </url>
   <url>
-    <loc>https://ai.cygnusyang.top/peakgo/zh</loc>
-    <lastmod>2026-11-14</lastmod>
+    <loc>https://ai.cygnusyang.top/peakgo/zh.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/"/>
+  </url>
+
+
+  <!-- Keepsake（2026-11-23 上线，英文默认页 + 中文页） -->
+  <url>
+    <loc>https://ai.cygnusyang.top/keepsake/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/keepsake/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/keepsake/zh.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/keepsake/"/>
+  </url>
+  <url>
+    <loc>https://ai.cygnusyang.top/keepsake/zh.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/keepsake/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/keepsake/zh.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/keepsake/"/>
   </url>
 
   <!-- Bitcoffer 营销页 2026-11-15 迁到独立站 https://bitcoffer.cygnusyang.top/（自带 sitemap.xml）；

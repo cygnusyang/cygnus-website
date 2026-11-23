@@ -1,167 +1,183 @@
-<!DOCTYPE html>
-<html lang="zh-Hans" data-site="peakgo" data-page="peakgo-home-zh">
+<!doctype html>
+<html lang="zh-Hans" data-site="peakgo">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0e1420">
-<meta name="description" content="峰行 PeakGo：把海拔、气压、指南针、水平仪放在同一块仪表盘上，如实标出每个读数的误差与来源。免费下载，无广告，无账号。">
-<title>峰行 PeakGo — 户外仪表盘</title>
-<link rel="canonical" href="https://ai.cygnusyang.top/peakgo/zh">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0f15">
+<title>PeakGo 峰行 — 四个读数，一屏看完</title>
+<meta name="description" content="PeakGo 把 GPS 与气压海拔、实时气压、指南针和水平仪放在一块 iPhone 仪表盘上。每个读数都标出误差范围与来源；缺少传感器时直说，不编数字。预发布。">
+<link rel="canonical" href="https://ai.cygnusyang.top/peakgo/zh.html">
 <link rel="alternate" hreflang="en" href="https://ai.cygnusyang.top/peakgo/">
-<link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh">
+<link rel="alternate" hreflang="zh-Hans" href="https://ai.cygnusyang.top/peakgo/zh.html">
 <link rel="alternate" hreflang="x-default" href="https://ai.cygnusyang.top/peakgo/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="ai.cygnusyang.top">
-<meta property="og:title" content="峰行 PeakGo — 户外仪表盘">
-<meta property="og:description" content="海拔、气压、指南针、水平仪同屏，每个读数都带误差范围与数据来源。免费，无广告，无账号。">
-<meta property="og:url" content="https://ai.cygnusyang.top/peakgo/zh">
+<meta property="og:site_name" content="PeakGo">
+<meta property="og:title" content="PeakGo 峰行 — 四个读数，一屏看完">
+<meta property="og:description" content="海拔、气压、指南针、水平仪放在同一块 iPhone 仪表盘上。每个读数都标出误差范围与来源。无账号、无广告、无埋点。">
+<meta property="og:url" content="https://ai.cygnusyang.top/peakgo/zh.html">
 <meta property="og:image" content="https://ai.cygnusyang.top/peakgo/assets/og-zh.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="峰行 PeakGo — 户外仪表盘">
-<meta name="twitter:description" content="海拔、气压、指南针、水平仪同屏，每个读数都带误差范围与数据来源。">
+<meta name="twitter:title" content="PeakGo 峰行 — 四个读数，一屏看完">
+<meta name="twitter:description" content="海拔、气压、指南针、水平仪放在同一块 iPhone 仪表盘上。每个读数都标出误差范围与来源。">
 <meta name="twitter:image" content="https://ai.cygnusyang.top/peakgo/assets/og-zh.jpg">
-<link rel="stylesheet" href="site.css">
-<script src="../theme.js"></script>
-<script src="../kaidoplan/analytics.js" defer></script>
+<link rel="stylesheet" href="peakgo.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": "https://ai.cygnusyang.top/peakgo/#app",
-  "name": "峰行 PeakGo",
-  "alternateName": "PeakGo",
+  "name": "PeakGo",
+  "alternateName": "峰行",
   "applicationCategory": "NavigationApplication",
-  "applicationSubCategory": "海拔表 / 气压计 / 指南针 / 水平仪",
-  "operatingSystem": "iOS 17.0 或更高版本",
-  "url": "https://ai.cygnusyang.top/peakgo/zh",
-  "description": "iPhone 上的户外仪表盘：GPS 与气压双源海拔、实时气压与趋势曲线、磁北/真北指南针、双轴水平仪，以及水印相机。每个读数都带误差范围与数据来源，测不准时显示「--」而不是编一个数字。",
-  "inLanguage": ["zh-Hans", "zh-Hant", "en", "ja", "ko", "de", "fr", "it", "es"],
+  "applicationSubCategory": "Altimeter, barometer, compass and level",
+  "operatingSystem": "iOS 17.0 or later",
+  "url": "https://ai.cygnusyang.top/peakgo/zh.html",
+  "description": "一款 iPhone 户外掌上仪表：GPS 与气压海拔、实时气压趋势、磁北与真北指南针、双轴水平仪，以及带海拔与方位水印的相机。每个读数都标出误差范围与数据来源；缺少传感器时直说，不给假数字。",
+  "inLanguage": ["zh-Hans", "en"],
   "isAccessibleForFree": true,
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY", "description": "上线后免费。当前为预发布，尚未开放下载。" },
   "featureList": [
-    "GPS 与气压双源海拔，支持已知点校准",
-    "实时气压与趋势曲线",
-    "指南针，磁北 / 真北切换",
+    "GPS 与气压海拔，支持已知点校准",
+    "实时气压与一小时趋势曲线",
+    "磁北与真北分开显示的指南针",
     "双轴水平仪",
-    "水印相机"
+    "带海拔与方位水印的相机"
   ],
-  "privacyPolicy": "https://ai.cygnusyang.top/peakgo/privacy-zh",
-  "sameAs": ["https://github.com/cygnusyang/peakgo-releases"]
+  "privacyPolicy": "https://ai.cygnusyang.top/peakgo/privacy-zh.html"
 }
 </script>
 </head>
 <body>
-<div class="wrap">
+<a class="skip" href="#main">跳到正文</a>
 
-<nav class="nav">
-  <a href="./zh">产品</a><a href="./privacy-zh">隐私政策</a><a href="./terms-zh">使用条款</a><a href="./support-zh">支持</a>
-  <details class="langmenu">
-    <summary>简体中文</summary>
-    <ul>
-      <li><a href="./" lang="en">English</a></li>
-      <li><span aria-current="page">简体中文</span></li>
-      <li><a href="./zh-Hant" lang="zh-Hant">繁體中文</a></li>
-      <li><a href="./ja" lang="ja">日本語</a></li>
-      <li><a href="./ko" lang="ko">한국어</a></li>
-      <li><a href="./de" lang="de">Deutsch</a></li>
-      <li><a href="./fr" lang="fr">Français</a></li>
-      <li><a href="./es" lang="es">Español</a></li>
-      <li><a href="./it" lang="it">Italiano</a></li>
-    </ul>
-  </details>
-</nav>
+<header class="wrap nav">
+  <a class="brand" href="#top" aria-label="PeakGo 首页">peakgo<span>.</span></a>
+  <nav class="navlinks" aria-label="主导航">
+    <a class="optional" href="#screens">界面</a>
+    <a class="optional" href="#honest">它不做什么</a>
+    <a class="optional" href="privacy-zh.html">隐私</a>
+    <a class="lang" href="./" lang="en">EN</a>
+    <span class="pill is-disabled" aria-disabled="true">下载 · 即将开放</span>
+  </nav>
+</header>
 
-<main>
-
-<h1>峰行 PeakGo<br>打开就是一块户外仪表盘</h1>
-<p class="lede">海拔、气压、指南针、水平仪同屏。每个读数都带着误差范围与数据来源，测不准就写「--」，不给你一个假精确的数字。</p>
-
-<div class="download" id="download">
-  <p><strong>iPhone，iOS 17 及以上。</strong>首版正在 App Store 审核，上线当天这里换成下载徽章。<a href="./support-zh">在支持页留下联系方式</a>。</p>
-  <p class="small">免费下载。无账号、无广告、不收集数据。</p>
-</div>
-
-<h2>四件仪表，一块屏幕</h2>
-<div class="grid">
-  <div class="card">
-    <h3>海拔</h3>
-    <p>GPS 与气压双源融合，米 / 英尺切换，支持已知点校准把基准定准。</p>
+<main id="main">
+  <div class="wrap hero" id="top">
+    <div>
+      <p class="eyebrow">户外仪表 · iPhone</p>
+      <h1>四个读数，<br>一屏看完。</h1>
+      <p class="lede">海拔、气压、指南针、水平仪，放在同一块仪表盘上。每个读数都标出误差范围和来源；传感器不可信时，App 直说，不编一个看起来专业的数字。</p>
+      <div class="actions">
+        <button class="button" type="button" disabled aria-disabled="true">下载 · 即将开放</button>
+        <a class="button secondary" href="#screens">先看看界面</a>
+      </div>
+      <p class="micro">预发布 · iOS 17+ · 首个 TestFlight 版本准备中<br>无账号、无广告、无埋点</p>
+    </div>
+    <figure class="hero-art">
+      <div class="phones">
+        <img class="phone back" src="assets/level-zh.jpg" width="331" height="720" alt="PeakGo 的双轴水平仪界面">
+        <img class="phone front" src="assets/dashboard-zh.jpg" width="331" height="720" alt="PeakGo 仪表盘，一屏显示海拔、气压、指南针和水平仪">
+      </div>
+      <figcaption class="caption">iPhone 截图。真机读数会带现场误差范围。</figcaption>
+    </figure>
   </div>
-  <div class="card">
-    <h3>气压计</h3>
-    <p>实时气压，hPa / inHg / mmHg 切换，趋势曲线一眼看涨跌。</p>
+
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <span><strong>GPS + 气压</strong> · 两个海拔，一个能信的数字</span>
+      <span><strong>读数带误差范围</strong> · 不做装饰性的精确</span>
+      <span><strong>不采集任何数据</strong> · 无账号、无 SDK、无服务器</span>
+    </div>
   </div>
-  <div class="card">
-    <h3>指南针</h3>
-    <p>磁北 / 真北切换、方位角、经纬度，8 字校准引导与磁干扰提示。</p>
-  </div>
-  <div class="card">
-    <h3>水平仪</h3>
-    <p>双轴倾角，露营、架三脚架、挂画时对齐用得上。</p>
-  </div>
-</div>
 
-<h2>界面</h2>
-<div class="shots">
-  <figure>
-    <img src="assets/dashboard-zh.jpg" width="360" height="782" loading="lazy" alt="仪表盘：方位 42 度东北，海拔 4298 米上下浮动 2.5 米，气压 592.9 百帕并带下降趋势曲线。">
-    <figcaption>仪表盘——方位、海拔、气压同屏</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/dashboard-light-zh.jpg" width="360" height="782" loading="lazy" alt="同一块仪表盘的浅色外观。">
-    <figcaption>浅色外观，版式一致</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/level-zh.jpg" width="360" height="782" loading="lazy" alt="水平仪页：双轴倾角读数与水平气泡指示。">
-    <figcaption>水平仪——双轴倾角</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/calibration-zh.jpg" width="360" height="782" loading="lazy" alt="已知点校准页，含海拔输入框与开始按钮。">
-    <figcaption>已知点校准</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/trend-zh.jpg" width="360" height="782" loading="lazy" alt="气压趋势详情：一小时的读数画成曲线，首末值标注在两端。">
-    <figcaption>气压趋势——一小时一眼看完</figcaption>
-  </figure>
-</div>
+  <section class="content wrap">
+    <div class="section-head">
+      <p class="eyebrow">为什么只有四个读数</p>
+      <h2>到了户外，真正会看的<br>其实只有这四个。</h2>
+      <p>海拔决定你在哪，气压告诉你天气在变，方位让你不偏，水平仪让炉子和帐篷放平。PeakGo 把屏幕留给这四件事，不再多一层标签栏。</p>
+    </div>
+    <div class="columns">
+      <article class="feature">
+        <span class="num">01 / 一屏</span>
+        <h3>四个仪表，两页翻完</h3>
+        <p>GPS 与气压海拔、一小时气压趋势、磁北与真北、双轴水平仪。两页就够，在海拔三千米不用挨个点标签找。</p>
+      </article>
+      <article class="feature">
+        <span class="num">02 / 校准</span>
+        <h3>校准锚在一个已知海拔上</h3>
+        <p>填一个确定高度，气压计就锚在它上面，而不是给你一个看起来很专业的数字。气压真实骤降时趋势会冻结，不被平均掉。</p>
+      </article>
+      <article class="feature">
+        <span class="num">03 / 诚实</span>
+        <h3>缺传感器就说缺</h3>
+        <p>没有气压计或磁力计的机器上，卡片会说明缺什么、为什么；其余功能照常可用。不给假数字，也不给看起来像读数的占位符。</p>
+      </article>
+    </div>
+  </section>
 
-<h2>水印相机</h2>
-<p>一键把海拔、坐标、时间、方向、气压叠到照片上，字段自选。旅行与登山的记录，不需要后期再拼。</p>
+  <section class="content wrap" id="screens">
+    <div class="section-head">
+      <p class="eyebrow">界面上有什么</p>
+      <h2>打开就是仪表盘，<br>不用先找菜单。</h2>
+      <p>读数在原地更新。单位跟着你走：米或英尺，hPa、inHg 或 mmHg，十进制度或度分秒。</p>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+        <img src="assets/dashboard-zh.jpg" width="331" height="720" alt="PeakGo 仪表盘：海拔、气压、指南针与水平仪" loading="lazy">
+        <figcaption><b>仪表盘</b>海拔、气压、方位、倾角，一屏读完。</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/trend-zh.jpg" width="331" height="720" alt="PeakGo 气压页，带一小时趋势曲线" loading="lazy">
+        <figcaption><b>气压趋势</b>一小时曲线，带当前读数和误差带。</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/level-zh.jpg" width="331" height="720" alt="PeakGo 双轴水平仪界面" loading="lazy">
+        <figcaption><b>水平仪</b>双轴，一米外也能读，支持辅助功能字号。</figcaption>
+      </figure>
+    </div>
+  </section>
 
-<h2>免费，且不靠广告</h2>
-<div class="price">
-<p><strong>上面这些全部永久免费</strong>，不订阅也不会失效。</p>
-<p>可选订阅「PeakGo 年度支持」：首年免费，之后按 App Store 在你所在地区显示的标价每年续订（中国区 ¥1 / 年）。它换来后续新增的仪表与主题，以及让这个 App 继续没有广告地活下去。</p>
-<p class="small">取消方式：iOS 设置 → Apple ID → 订阅。删除 App 不会自动取消。</p>
-</div>
+  <section class="content wrap" id="honest">
+    <div class="split">
+      <div class="section-head">
+        <p class="eyebrow">它不做什么</p>
+        <h2>没有账号，<br>也没有要关掉的开关。</h2>
+        <p>PeakGo 是一件工具，不是一个服务。它不问你是谁，进去以后也没有东西要卖给你。</p>
+      </div>
+      <ul class="plain">
+        <li><b>不注册，不登录。</b><span>没有要创建的东西，没有要恢复的东西，也没有要取消的订阅。</span></li>
+        <li><b>无广告、无埋点、无第三方 SDK。</b><span>App 自身不发起互联网请求。</span></li>
+        <li><b>原片始终是你的。</b><span>带海拔与方位的水印照片只写进你的相册，不上传到任何地方。</span></li>
+        <li><b>四项权限，四个理由。</b><span>定位用于海拔、坐标与真北；运动与健身用于气压和水平仪；相机与相册用于水印相机。</span></li>
+      </ul>
+    </div>
+  </section>
 
-<h2>隐私是默认项</h2>
-<ul>
-  <li>所有读数在本机计算，<strong>不上传</strong>；没有账号、没有云同步。</li>
-  <li>没有广告 SDK，没有第三方统计，不做追踪。</li>
-  <li>定位、相机、运动权限只在本机使用，拒绝任一权限其余功能照常可用。</li>
-</ul>
-<p><a href="./privacy-zh">看完整的隐私政策</a></p>
-
-<h2>可用范围与语言</h2>
-<p>iPhone，iOS 17 及以上。界面九种语言：简体中文、繁體中文、English、日本語、한국어、Deutsch、Français、Español、Italiano。首版不做 iPad 声明——横屏与多窗口布局没有逐屏验证过，就不写进支持范围。</p>
-
+  <section class="content wrap" id="download">
+    <div class="download">
+      <div>
+        <p class="eyebrow">下载</p>
+        <h2>还没开放下载。</h2>
+        <p>PeakGo 目前是预发布。首个构建会通过 TestFlight 发出，真机实测之后再上 App Store。按钮先置灰——能点的下载按钮，等真有东西可装时再放出来。</p>
+      </div>
+      <div class="download-act">
+        <button class="button" type="button" disabled aria-disabled="true">下载 · 即将开放</button>
+        <a class="button secondary" href="mailto:support@cygnusyang.top?subject=PeakGo%20TestFlight&amp;body=首个%20TestFlight%20版本准备好时，请把链接发给我。">邮件通知我 TestFlight</a>
+        <p class="micro">iOS 17+ · iPhone · 上线后免费</p>
+      </div>
+    </div>
+  </section>
 </main>
 
-<div class="foot">
-<p>本 App 为户外辅助工具，读数仅供日常参考，不是专业测量、导航或生命安全设备。涉及人身安全时请使用专业仪器。</p>
-<p>
-  <a href="./privacy-zh">隐私政策</a>
-  <a href="./terms-zh">使用条款</a>
-  <a href="./support-zh">支持</a>
-</p>
-<p>© 2026 Ruohu Yang · <a href="mailto:ruohuyang@163.com">ruohuyang@163.com</a></p>
-</div>
-
-</div>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 PeakGo 峰行 · 独立 iPhone 应用</span>
+    <span><a href="privacy-zh.html">隐私</a> · <a href="terms-zh.html">条款</a> · <a href="support-zh.html">支持</a> · <a href="./" lang="en">English</a></span>
+  </div>
+</footer>
 </body>
 </html>

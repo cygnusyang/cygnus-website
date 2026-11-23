@@ -24,6 +24,8 @@
   --star-dim:#c79a2f;
   --accent-kaido:#5f6cf8; /* product accent — Kaido */
   --accent-bitcoffer:#0f7b6c; /* product accent — Bitcoffer */
+  --accent-peakgo:#1fa97c;   /* product accent — PeakGo */
+  --accent-keepsake:#4f7d63; /* product accent — Keepsake */
   --max:1160px;
   --radius:14px;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Helvetica Neue",sans-serif;
@@ -46,6 +48,8 @@
   --night:#f7f8fb;        /* hero gradient start, light mode */
   --night-2:#eaedf5;      /* hero gradient end, light mode */
   --star-dim:#8a6a12;     /* gold that still holds contrast on white */
+  --accent-peakgo:#0d8a63;
+  --accent-keepsake:#2f5d45;
 }
 
 *{box-sizing:border-box}
@@ -117,14 +121,20 @@ p{margin:0}
 .product .bar{position:absolute;top:0;left:0;right:0;height:4px}
 .product.kaido .bar{background:var(--accent-kaido)}
 .product.bitcoffer .bar{background:var(--accent-bitcoffer)}
+.product.peakgo .bar{background:var(--accent-peakgo)}
+.product.keepsake .bar{background:var(--accent-keepsake)}
 .product .tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:650;margin-bottom:16px}
 .product.kaido .tag{color:var(--accent-kaido)}
 .product.bitcoffer .tag{color:var(--accent-bitcoffer)}
+.product.peakgo .tag{color:var(--accent-peakgo)}
+.product.keepsake .tag{color:var(--accent-keepsake)}
 .product h3{font-size:26px;margin-bottom:12px}
 .product p{color:var(--muted);margin-bottom:22px}
 .product .go{font-weight:650;font-size:15px;display:inline-flex;align-items:center;gap:6px}
 .product.kaido .go{color:var(--accent-kaido)}
 .product.bitcoffer .go{color:var(--accent-bitcoffer)}
+.product.peakgo .go{color:var(--accent-peakgo)}
+.product.keepsake .go{color:var(--accent-keepsake)}
 .product .go .arr{transition:transform .12s ease}
 .product:hover .go .arr{transform:translateX(3px)}
 .product .price{font-size:34px;font-weight:700;letter-spacing:-.02em;margin-bottom:16px}
